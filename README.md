@@ -1,6 +1,6 @@
 # OpenDR: Open GIS Framework for Real-Time Disaster Response
 
-[![FOSS4G-2026](https://img.shields.io/badge/FOSS4G-2026_Academic_Track-red)]([https://2026.foss4g.org](https://talks.osgeo.org/fossg4-2026-academic-track))
+[![FOSS4G-2026](https://img.shields.io/badge/FOSS4G-2026_Academic_Track-red)]([https://2026.foss4g.org](https://talks.osgeo.org/fossg4-2026-academic-track/))
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Reproducibility](https://img.shields.io/badge/Reproducibility-Docker_Verified-green)](#-reproducibility-and-quick-start)
 
