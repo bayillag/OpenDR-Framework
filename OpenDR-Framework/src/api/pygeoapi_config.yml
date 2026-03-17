@@ -18,3 +18,13 @@ resources:
       - type: edr
         name: xarray
         data: data/sample/chirps_sample.nc
+
+malaria_risk_context:
+    type: collection
+    title: EPIDEMIA LST Anomalies (Amhara Region)
+    description: Land Surface Temperature anomalies for disease forecasting.
+    providers:
+      - type: feature
+        name: PostgreSQL
+        data: postgresql://user:pass@db:5432/opendr
+        table: lst_anomalies
