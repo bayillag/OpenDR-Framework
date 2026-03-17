@@ -1,0 +1,20 @@
+server:
+  bind_host: 0.0.0.0
+  bind_port: 80
+resources:
+  flood_alerts:
+    type: collection
+    title: Real-time Flood Extents (Ethiopia)
+    providers:
+      - type: feature
+        name: PostgreSQL
+        data: postgresql://user:pass@db:5432/opendr
+        table: active_floods
+  weather_history:
+    type: collection
+    title: CHIRPS Precipitation Context
+    description: Multi-sensor context for post-fire runoff risk
+    providers:
+      - type: edr
+        name: xarray
+        data: data/sample/chirps_sample.nc

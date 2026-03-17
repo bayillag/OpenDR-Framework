@@ -1,0 +1,7 @@
+{
+  "id": "s1-sar-opendr",
+  "extent": {
+    "spatial": {"bbox": [[33.0, 3.0, 48.0, 15.0]]},
+    "temporal": {"interval": [["2020-01-01T00:00:00Z", null]]}
+  }
+}

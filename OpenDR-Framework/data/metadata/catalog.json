@@ -1,0 +1,9 @@
+{
+  "stac_version": "1.0.0",
+  "id": "opendr-stac-catalog",
+  "description": "Root catalog for OpenDR 1.0 multi-sensor data",
+  "links": [
+    {"rel": "child", "href": "./collections/sentinel-1-sar.json"},
+    {"rel": "child", "href": "./collections/grace-groundwater.json"}
+  ]
+}

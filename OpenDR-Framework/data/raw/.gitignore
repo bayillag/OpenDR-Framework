@@ -1,0 +1,7 @@
+# Ignore all large satellite files in this folder
+*.tif
+*.nc
+*.hdf
+*.zip
+*.tar.gz
+!README.md

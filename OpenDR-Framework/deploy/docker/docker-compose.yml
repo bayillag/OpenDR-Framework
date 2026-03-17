@@ -1,0 +1,31 @@
+services:
+  database:
+    image: postgis/postgis:16-3.4
+    environment:
+      - POSTGRES_DB=opendr
+      - POSTGRES_PASSWORD=foss4g
+    ports:
+      - "5432:5432"
+
+  api-gateway:
+    image: geopython/pygeoapi:latest
+    volumes:
+      - ../../src/api/pygeoapi_config.yml:/pygeoapi/local.config.yml
+    ports:
+      - "80:80"
+    depends_on:
+      - database
+
+  dask-scheduler:
+    image: daskdev/dask:latest
+    command: dask-scheduler
+    ports:
+      - "8786:8786"
+      - "8787:8787"
+
+  airflow-orchestrator:
+    image: apache/airflow:2.8.1
+    volumes:
+      - ../../src/ingestion/airflow_dags:/opt/airflow/dags
+    environment:
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@database/opendr
