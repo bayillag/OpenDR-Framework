@@ -1,0 +1,23 @@
+name: OpenDR CI/CD
+on: [push, pull_request]
+
+jobs:
+  test_microservices:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run Pytest
+        run: pytest tests/
+
+  build_containers:
+    needs: test_microservices
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build Docker Stack
+        run: docker-compose -f deploy/docker/docker-compose.yml build
