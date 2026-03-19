@@ -1,0 +1,45 @@
+{
+  "type": "FeatureCollection",
+  "name": "OpenDR_1_0_Validation_Sites",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "case_study": "A",
+        "name": "Tokyo Urban Resilience",
+        "hazard_focus": ["Urban Flood", "Heat Island"],
+        "data_stack": ["Project PLATEAU", "Sentinel-5P"]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[139.5, 35.5], [140.0, 35.5], [140.0, 36.0], [139.5, 36.0], [139.5, 35.5]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "case_study": "B",
+        "name": "Baro-Akobo-Sobat Basin",
+        "hazard_focus": ["Transboundary Flood", "Malaria"],
+        "data_stack": ["JAXA SAR", "GRACE", "EPIDEMIA"]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[33.0, 7.0], [36.0, 7.0], [36.0, 10.0], [33.0, 10.0], [33.0, 7.0]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "case_study": "C",
+        "name": "Regional Savanna Fire Watch",
+        "hazard_focus": ["Wildfire", "Fire-to-Flood"],
+        "data_stack": ["GOES-16", "CHIRPS", "Daymet"]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[37.7, -12.3], [38.5, -12.3], [38.5, -11.2], [37.7, -11.2], [37.7, -12.3]]]
+      }
+    }
+  ]
+}

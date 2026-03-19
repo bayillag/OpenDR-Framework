@@ -1,6 +1,56 @@
 {
-  "provider": "JAXA",
-  "dataset": "ALOS-2 PALSAR-2",
-  "access_point": "https://www.eorc.jaxa.jp/ALOS/en/dataset/palsar2_l11_e.htm",
-  "auth_required": true
+  "framework_version": "1.0.0",
+  "module": "Multi-Sensor Fusion Core",
+  "mission_specs": {
+    "provider": "JAXA",
+    "satellite": "ALOS-2",
+    "instrument": "PALSAR-2",
+    "band": "L-band",
+    "frequency_ghz": 1.2,
+    "wavelength_cm": 22.9,
+    "polarizations": ["HH", "HV"],
+    "native_resolution_m": 10
+  },
+  "ingestion_strategy": {
+    "discovery_method": "STAC",
+    "provider_endpoint": "https://gportal.jaxa.jp/gpr/api/",
+    "stac_catalog_id": "jaxa-alos2-palsar2-l1.1",
+    "storage_format": "COG",
+    "compression": "DEFLATE",
+    "http_range_requests": true
+  },
+  "preprocessing_pipeline": {
+    "radiometric_calibration": "Sigma0",
+    "calibration_constant": -83.0,
+    "speckle_filter": {
+      "method": "Refined Lee",
+      "window_size": 7
+    },
+    "terrain_correction": {
+      "source_dem": "NASADEM",
+      "resampling": "bilinear"
+    },
+    "orthorectification": "EPSG:4326"
+  },
+  "hazard_module_parameters": {
+    "flood_detection": {
+      "method": "Adaptive Otsu",
+      "reference_paper": "Markert et al. (2024)",
+      "initial_threshold_db": -16.0,
+      "backscatter_band": "HV",
+      "reason": "HV polarization is superior for detecting inundation under dense vegetation/canopy"
+    }
+  },
+  "case_study_targets": {
+    "baro_akobo_sobat": {
+      "bbox": [33.0, 7.0, 36.0, 10.0],
+      "priority": "High",
+      "phenological_mask_required": true
+    }
+  },
+  "auth": {
+    "env_username": "JAXA_GPORTAL_USER",
+    "env_password": "JAXA_GPORTAL_PASSWORD",
+    "access_type": "OAuth2"
+  }
 }

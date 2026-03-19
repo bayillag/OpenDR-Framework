@@ -12,3 +12,40 @@ pygeoapi>=0.15.0
 apache-airflow>=2.8.0
 scipy>=1.12.0
 opencv-python-headless>=4.9.0
+
+# Data Ingestion
+pystac-client>=0.7.0
+requests>=2.31.0
+
+# Distributed Compute & Array Ops
+dask-geo>=0.2.0
+dask[distributed]>=2024.1.0
+xarray-spatial>=0.3.0
+rioxarray>=0.15.0
+
+# GeoAI
+torch>=2.2.0
+torchvision>=0.17.0
+opencv-python-headless>=4.9.0
+scikit-image>=0.22.0
+
+# Spatial Database & Mediation
+psycopg2-binary>=2.9.9
+geopandas>=0.14.0
+pygeoapi>=0.15.0
+
+# Digital Twin (Case Study A)
+apache-sedona>=1.5.1
+pyspark>=3.5.0
+
+pystac-client
+rioxarray
+xarray-spatial
+opencv-python-headless
+scikit-image
+geopandas
+psycopg2-binary
+pygeoapi
+torch
+dask-geo
+scipy

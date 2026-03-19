@@ -1,0 +1,29 @@
+# OpenDR 1.0 Logic Mapping
+# This file routes discovered STAC Items to the correct Intelligence Microservice.
+
+pipeline_routing:
+  - stac_collection_id: "sentinel-1-sar-opendr"
+    handler: "src.microservices.flood_otsu.compute_flood_mask"
+    priority: 1
+    trigger: "immediate"
+
+  - stac_collection_id: "sentinel-2-msi-opendr"
+    handler: "src.microservices.rangeland_regr.fit_harmonic_model"
+    priority: 2
+    trigger: "scheduled_daily"
+
+  - stac_collection_id: "goes-16-fire-opendr"
+    handler: "src.microservices.fire_watch.extract_burn_perimeter"
+    priority: 1
+    trigger: "immediate"
+    cadence_minutes: 15
+
+  - stac_collection_id: "grace-fo-mascon-opendr"
+    handler: "src.microservices.hydrology_grace.calculate_saturation_threshold"
+    priority: 3
+    trigger: "scheduled_weekly"
+
+exposure_logic:
+  primary_vector_source: "src.data.external.fetch_google_buildings"
+  intersection_engine: "src.microservices.exposure_model.calculate_impact_metrics"
+  population_context: "data/lookup/ethiopia_woreda_pop.json"

@@ -1,0 +1,23 @@
+{
+  "stac_version": "1.0.0",
+  "type": "Collection",
+  "id": "sentinel-2-l2a-opendr",
+  "title": "OpenDR Sentinel-2 MSI Surface Reflectance",
+  "description": "Multi-spectral data for NDFI and Harmonic Regression. Logic based on Souza Jr. et al. (2024).",
+  "item_assets": {
+    "visual": { "roles": ["vis"], "type": "image/tiff; profile=cloud-optimized" },
+    "B03": { "title": "Green", "roles": ["data", "ndwi"] },
+    "B04": { "title": "Red", "roles": ["data", "ndvi"] },
+    "B08": { "title": "NIR", "roles": ["data", "ndvi", "ndfi"] },
+    "B11": { "title": "SWIR1", "roles": ["data", "ndfi"] }
+  },
+  "extent": {
+    "spatial": { "bbox": [[-180, -90, 180, 90]] },
+    "temporal": { "interval": [["2015-06-23T00:00:00Z", null]] }
+  },
+  "links": [
+    { "rel": "root", "href": "../catalog.json" },
+    { "rel": "parent", "href": "../catalog.json" },
+    { "rel": "self", "href": "./sentinel-2-msi.json" }
+  ]
+}

@@ -1,3 +1,12 @@
 land_type,omega,beta_0,beta_1,beta_2
 semi_arid_rangeland,1.0,0.452,0.012,-0.005
 highland_forest,1.0,0.781,0.002,0.001
+land_use_id,class_name,region,constant_c,a1,b1,a2,b2,omega,rmse_threshold,notes
+10,Highland Forest,Amhara_Ethiopia,0.782,0.045,-0.012,0.008,0.003,1.0,0.042,High stability; evergreen dominated
+20,Semi-Arid Rangeland,Afar_Ethiopia,0.312,0.089,0.054,-0.021,0.011,1.0,0.065,Bimodal rain response (Belg/Kiremt)
+30,Deciduous Shrubland,SNNPR_Ethiopia,0.456,0.124,0.082,-0.035,0.015,1.0,0.058,Sensitive to moisture stress (MSI)
+40,Irrigated Cropland,Tokyo_Japan,0.521,0.215,-0.145,0.056,-0.022,1.0,0.035,Project PLATEAU buffer zones
+41,Rainfed Agriculture,Amhara_Ethiopia,0.415,0.198,0.112,-0.042,0.018,1.0,0.072,High seasonal amplitude
+50,Urban Green Space,Tokyo_Japan,0.345,0.052,-0.022,0.012,0.005,1.0,0.028,Low amplitude; high managed noise
+60,Wetland/Marsh,Machar_Marshes,0.612,0.110,0.065,-0.015,0.008,1.0,0.085,Paired with SAR for under-canopy flood
+70,Sparse Vegetation,Lower_Omo_Basin,0.185,0.032,0.015,-0.005,0.002,1.0,0.092,High soil background noise (SMA required)

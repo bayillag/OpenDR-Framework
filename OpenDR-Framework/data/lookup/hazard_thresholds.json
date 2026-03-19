@@ -1,0 +1,20 @@
+{
+  "fire_detection": {
+    "goes_frp_threshold": 10.5,
+    "z_score_critical": 2.5,
+    "min_strikes_to_alert": 2,
+    "window_minutes": 60
+  },
+  "flood_assessment": {
+    "otsu_min_variance": 0.05,
+    "sar_backscatter_max_db": -16.0,
+    "slope_threshold_degrees": 15.0,
+    "min_connectivity_pixels": 25
+  },
+  "health_malaria": {
+    "lst_min_celsius": 18.0,
+    "lst_max_celsius": 32.0,
+    "precip_30day_min_mm": 50.0,
+    "lag_weeks": 4
+  }
+}

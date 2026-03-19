@@ -1,0 +1,19 @@
+{
+  "stac_version": "1.0.0",
+  "type": "Collection",
+  "id": "daymet-v4-opendr",
+  "title": "OpenDR Local Weather Context (Daymet)",
+  "description": "Daily surface meteorology (Temp/Vapor Pressure) for North America study sites. Reference: Engelstad et al. (2024).",
+  "item_assets": {
+    "tmax": { "title": "Max Air Temperature", "roles": ["fire-risk"] },
+    "vp": { "title": "Vapor Pressure", "roles": ["health-modeling"] }
+  },
+  "extent": {
+    "spatial": { "bbox": [[-178.23, 14.53, -52.88, 82.91]] },
+    "temporal": { "interval": [["1980-01-01T00:00:00Z", null]] }
+  },
+  "links": [
+    { "rel": "root", "href": "../catalog.json" },
+    { "rel": "self", "href": "./daymet-weather.json" }
+  ]
+}

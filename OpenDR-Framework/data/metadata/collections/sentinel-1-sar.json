@@ -1,7 +1,86 @@
 {
-  "id": "s1-sar-opendr",
+  "stac_version": "1.0.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/sar/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/projection/v1.0.0/schema.json"
+  ],
+  "type": "Collection",
+  "id": "sentinel-1-sar-opendr",
+  "title": "OpenDR 1.0 Sentinel-1 SAR Inundation Collection",
+  "description": "Multi-sensor C-band Synthetic Aperture Radar (SAR) collection optimized for real-time flood assessment in transboundary basins. Data is provided in FLOAT power scale to support Adaptive Otsu Thresholding microservices as per Markert et al. (2024).",
+  "keywords": [
+    "SAR",
+    "Sentinel-1",
+    "Flood Inundation",
+    "Cloud-Native",
+    "OpenDR",
+    "East Africa"
+  ],
+  "license": "proprietary",
+  "providers": [
+    {
+      "name": "ESA / Copernicus",
+      "roles": ["producer", "licensor"],
+      "url": "https://sentinel.esa.int/web/sentinel/missions/sentinel-1"
+    },
+    {
+      "name": "Jinka Regional Veterinary Laboratory",
+      "roles": ["processor", "host"],
+      "url": "https://github.com/bayillag/OpenDR-Framework"
+    }
+  ],
   "extent": {
-    "spatial": {"bbox": [[33.0, 3.0, 48.0, 15.0]]},
-    "temporal": {"interval": [["2020-01-01T00:00:00Z", null]]}
-  }
+    "spatial": {
+      "bbox": [
+        [33.0, 3.0, 48.0, 15.0]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        ["2020-01-01T00:00:00Z", null]
+      ]
+    }
+  },
+  "item_assets": {
+    "vh": {
+      "title": "VH: dual-pol cross-polarization, FLOAT power",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": ["data", "flood-extraction"],
+      "sar:polarization": "VH"
+    },
+    "vv": {
+      "title": "VV: dual-pol vertical-polarization, FLOAT power",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": ["data", "structural-analysis"],
+      "sar:polarization": "VV"
+    }
+  },
+  "summaries": {
+    "constellation": ["sentinel-1"],
+    "sar:instrument_mode": ["IW"],
+    "sar:frequency_band": ["C"],
+    "sar:product_type": ["GRD"],
+    "sar:center_frequency": [5.405],
+    "sar:resolution_range": [20],
+    "sar:resolution_azimuth": [22],
+    "sar:pixel_spacing_range": [10],
+    "sar:pixel_spacing_azimuth": [10]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "self",
+      "href": "./sentinel-1-sar.json",
+      "type": "application/json"
+    }
+  ]
 }

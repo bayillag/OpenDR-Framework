@@ -1,0 +1,22 @@
+{
+  "stac_version": "1.0.0",
+  "type": "Collection",
+  "id": "grace-fo-mascon-opendr",
+  "title": "OpenDR Groundwater Anomaly (GRACE)",
+  "description": "Total Water Storage (TWS) anomalies for predicting basin-scale flood saturation. Reference: Purdy & Famiglietti (2024).",
+  "item_assets": {
+    "lwe_thickness": {
+      "title": "Liquid Water Equivalent Thickness",
+      "type": "application/x-netcdf",
+      "roles": ["subsurface-intelligence"]
+    }
+  },
+  "extent": {
+    "spatial": { "bbox": [[-180, -90, 180, 90]] },
+    "temporal": { "interval": [["2002-04-01T00:00:00Z", null]] }
+  },
+  "links": [
+    { "rel": "root", "href": "../catalog.json" },
+    { "rel": "self", "href": "./grace-groundwater.json" }
+  ]
+}

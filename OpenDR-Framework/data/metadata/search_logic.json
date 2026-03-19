@@ -1,0 +1,20 @@
+{
+  "default_stac_endpoint": "https://earth-search.aws.element84.com/v1",
+  "search_parameters": {
+    "optical": {
+      "max_cloud_cover": 30,
+      "processing_level": "L2A",
+      "reproducibility_threshold": "90%"
+    },
+    "sar": {
+      "instrument_mode": "IW",
+      "product_type": "GRD",
+      "polarization": "VH"
+    },
+    "high_frequency": {
+      "sensor": "GOES-16",
+      "refresh_rate_minutes": 15
+    }
+  },
+  "metadata_retention_days": 30
+}

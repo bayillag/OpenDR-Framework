@@ -1,0 +1,22 @@
+{
+  "stac_version": "1.0.0",
+  "type": "Collection",
+  "id": "chirps-precip-opendr",
+  "title": "CHIRPS Rainfall Precipitation",
+  "description": "Quasi-global rainfall at 0.05° resolution for runoff risk pipelines. Reference: Branson & Smith (2024).",
+  "item_assets": {
+    "precipitation": {
+      "title": "Daily Precipitation (mm)",
+      "type": "image/tiff; profile=cloud-optimized",
+      "roles": ["meteorological-context"]
+    }
+  },
+  "extent": {
+    "spatial": { "bbox": [[-180, -50, 180, 50]] },
+    "temporal": { "interval": [["1981-01-01T00:00:00Z", null]] }
+  },
+  "links": [
+    { "rel": "root", "href": "../catalog.json" },
+    { "rel": "self", "href": "./chirps-precip.json" }
+  ]
+}

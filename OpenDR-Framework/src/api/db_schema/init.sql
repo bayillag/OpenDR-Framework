@@ -30,3 +30,30 @@ CREATE TABLE field_validation (
 );
 
 CREATE INDEX idx_flood_geom ON flood_extents USING GIST (geom);
+
+CREATE EXTENSION IF NOT EXISTS postgis;
+
+-- Table for Real-time Flood Extents
+CREATE TABLE flood_alerts (
+    id SERIAL PRIMARY KEY,
+    event_date TIMESTAMPTZ,
+    basin_name TEXT,
+    geom GEOMETRY(Polygon, 4326)
+);
+
+-- Table for Active Wildfire Watch
+CREATE TABLE fire_alerts (
+    id SERIAL PRIMARY KEY,
+    discovery_time TIMESTAMPTZ,
+    intensity_frp FLOAT,
+    geom GEOMETRY(MultiPolygon, 4326)
+);
+
+-- Table for Citizen Validation (Loop-in-the-Citizen)
+CREATE TABLE field_validation (
+    id SERIAL PRIMARY KEY,
+    hazard_id INT,
+    is_valid BOOLEAN, -- Confirmed by responder
+    notes TEXT,
+    geom GEOMETRY(Point, 4326)
+);

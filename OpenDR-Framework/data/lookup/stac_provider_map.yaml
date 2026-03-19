@@ -1,0 +1,17 @@
+# OpenDR 1.0 STAC Mapping
+mappings:
+  - collection_id: "sentinel-1-grd"
+    module: "src.microservices.flood_otsu"
+    params: { polarization: "VH", mode: "IW" }
+    
+  - collection_id: "sentinel-2-l2a"
+    module: "src.microservices.rangeland_regr"
+    params: { index: "NDVI", scale: 10 }
+    
+  - collection_id: "goes-16-fire-nrt"
+    module: "src.microservices.fire_watch"
+    params: { cadence_min: 15 }
+
+  - collection_id: "grace-fo-mascon"
+    module: "src.microservices.hydrology_grace"
+    params: { variable: "lwe_thickness" }

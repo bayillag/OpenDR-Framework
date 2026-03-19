@@ -1,9 +1,55 @@
 {
   "stac_version": "1.0.0",
-  "id": "opendr-stac-catalog",
-  "description": "Root catalog for OpenDR 1.0 multi-sensor data",
+  "type": "Catalog",
+  "id": "opendr-1-0-root-catalog",
+  "title": "OpenDR 1.0 Root Catalog",
+  "description": "The central discovery hub for the Open Disaster Response Framework. This catalog organizes multi-sensor data streams (SAR, Optical, Geostationary, Gravimetric) used to calculate real-time hazard detection and humanitarian exposure in the Global South.",
   "links": [
-    {"rel": "child", "href": "./collections/sentinel-1-sar.json"},
-    {"rel": "child", "href": "./collections/grace-groundwater.json"}
+    {
+      "rel": "root",
+      "href": "./catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "self",
+      "href": "./catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "child",
+      "href": "./collections/sentinel-1-sar.json",
+      "type": "application/json",
+      "title": "Sentinel-1 SAR Collection (Flood Module)"
+    },
+    {
+      "rel": "child",
+      "href": "./collections/sentinel-2-msi.json",
+      "type": "application/json",
+      "title": "Sentinel-2 MSI Collection (Vegetation Module)"
+    },
+    {
+      "rel": "child",
+      "href": "./collections/goes-16-fire.json",
+      "type": "application/json",
+      "title": "GOES-16 Fire Watch Collection (Active Fire Module)"
+    },
+    {
+      "rel": "child",
+      "href": "./collections/grace-groundwater.json",
+      "type": "application/json",
+      "title": "GRACE Groundwater Anomalies (Subsurface Module)"
+    },
+    {
+      "rel": "child",
+      "href": "./collections/chirps-precip.json",
+      "type": "application/json",
+      "title": "CHIRPS Precipitation (Climate Context)"
+    },
+    {
+      "rel": "child",
+      "href": "./collections/daymet-weather.json",
+      "type": "application/json",
+      "title": "Daymet Surface Weather (Behavior Context)"
+    }
   ]
 }

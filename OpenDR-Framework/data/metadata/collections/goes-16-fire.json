@@ -1,0 +1,23 @@
+{
+  "stac_version": "1.0.0",
+  "type": "Collection",
+  "id": "goes-16-fire-opendr",
+  "title": "OpenDR Geostationary Active Fire Watch",
+  "description": "High-cadence (15-min) thermal anomalies from GOES-16 for burn perimeter automation. Reference: Crowley & Liu (2024).",
+  "summaries": {
+    "datetime_cadence": ["PT15M"],
+    "aoi_coverage": ["Americas", "Regional-Mesa"]
+  },
+  "item_assets": {
+    "B07": { "title": "Shortwave Window (3.9um)", "roles": ["fire-detection"] },
+    "B14": { "title": "Longwave Window (11.2um)", "roles": ["background-temp"] }
+  },
+  "extent": {
+    "spatial": { "bbox": [[-156.29, -60.0, -6.0, 60.0]] },
+    "temporal": { "interval": [["2017-12-18T00:00:00Z", null]] }
+  },
+  "links": [
+    { "rel": "root", "href": "../catalog.json" },
+    { "rel": "self", "href": "./goes-16-fire.json" }
+  ]
+}

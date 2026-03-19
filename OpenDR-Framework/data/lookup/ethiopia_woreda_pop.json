@@ -1,4 +1,93 @@
-[
-  {"wid": 74, "woreda": "Kewet", "pop_2024": 154000},
-  {"wid": 133, "woreda": "Jilie Timuga", "pop_2024": 89200}
-]
+{
+  "metadata": {
+    "source": "Ethiopia Central Statistical Agency (CSA) / WorldPop 2024 Adjusted",
+    "region_focus": "Amhara and Baro-Akobo-Sobat Transboundary Basin",
+    "units": {
+      "population": "count",
+      "density": "persons_per_sq_km"
+    }
+  },
+  "woredas": [
+    {
+      "wid": 74,
+      "woreda": "Kewet",
+      "region": "Amhara",
+      "total_population": 154200,
+      "pop_density": 215.4,
+      "vulnerability_index": 0.72,
+      "notes": "High agricultural dependency"
+    },
+    {
+      "wid": 133,
+      "woreda": "Jilie Timuga",
+      "region": "Amhara",
+      "total_population": 89150,
+      "pop_density": 188.2,
+      "vulnerability_index": 0.65,
+      "notes": "Flood-prone lowland areas"
+    },
+    {
+      "wid": 131,
+      "woreda": "Dewa Chefa",
+      "region": "Amhara",
+      "total_population": 124300,
+      "pop_density": 242.1,
+      "vulnerability_index": 0.68,
+      "notes": "Integrated with EPIDEMIA malaria watch"
+    },
+    {
+      "wid": 135,
+      "woreda": "Dewa Harewa",
+      "region": "Amhara",
+      "total_population": 56700,
+      "pop_density": 112.5,
+      "vulnerability_index": 0.59,
+      "notes": "Pastoralist communities"
+    },
+    {
+      "wid": 8,
+      "woreda": "Bati",
+      "region": "Amhara",
+      "total_population": 192400,
+      "pop_density": 295.8,
+      "vulnerability_index": 0.81,
+      "notes": "High transit population; strategic aid point"
+    },
+    {
+      "wid": 138,
+      "woreda": "Aregoba Sp. Wo.",
+      "region": "Amhara",
+      "total_population": 42100,
+      "pop_density": 94.2,
+      "vulnerability_index": 0.75,
+      "notes": "High vulnerability in informal structures"
+    },
+    {
+      "wid": 49,
+      "woreda": "Kalu",
+      "region": "Amhara",
+      "total_population": 210800,
+      "pop_density": 310.6,
+      "vulnerability_index": 0.78,
+      "notes": "Urban-rural interface; high infrastructure risk"
+    },
+    {
+      "wid": 201,
+      "woreda": "Itang",
+      "region": "Gambella",
+      "total_population": 65400,
+      "pop_density": 45.3,
+      "vulnerability_index": 0.88,
+      "notes": "Machar Marshes transboundary zone; contains refugee settlements"
+    },
+    {
+      "wid": 202,
+      "woreda": "Lare",
+      "region": "Gambella",
+      "total_population": 48200,
+      "pop_density": 38.7,
+      "vulnerability_index": 0.91,
+      "notes": "Critical flood-to-displacement corridor"
+    }
+  ]
+}
