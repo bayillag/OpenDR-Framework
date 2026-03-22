@@ -61,7 +61,7 @@ OpenDR 1.0 operationalizes and ports complex scientific logic originally develop
 
 ## 🧪 Case Studies
 The repository includes **Technical Reproducibility** notebooks for our cross-continental validation sites:
-*   [**Tokyo, Japan**](notebooks/01_case_study_japan.ipynb): 3D Digital Twin integration with Project PLATEAU CityGML.
+*   [**Tokyo, Japan**](OpenDR-Framework/OpenDR-Framework/notebooks/01_case_study_japan.ipynb): 3D Digital Twin integration with Project PLATEAU CityGML.
 *   [**East Africa**](notebooks/01_hydrology_ethiopia.ipynb): Transboundary flood and malaria early warning in the Baro-Akobo-Sobat Basin.
 *   [**Regional Watch**](notebooks/02_wildfire_tactical_watch.ipynb): Tactical wildfire watch using 15-minute GOES-16 updates.
 
