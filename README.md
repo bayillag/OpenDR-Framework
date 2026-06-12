@@ -14,11 +14,11 @@
 ## 🏗️ System Architecture
 The framework is organized into five functional tiers:
 
-1.  **Tier 1: Data Ingestion & Discovery** – Automated monitoring of STAC endpoints (Sentinel-1/2, Landsat 8/9, GOES-16, GRACE) [5].
+1.  **Tier 1: Data Ingestion & Discovery** – Automated monitoring of STAC endpoints (Sentinel-1/2, Landsat 8/9, GOES-16, GRACE).
 2.  **Tier 2: Orchestration** – Apache Airflow pipelines triggering analytical DAGs upon new data detection.
 3.  **Tier 3: Distributed Compute** – Imagery analysis using Dask-Geo on Kubernetes, executing PyTorch segmentation models.
 4.  **Tier 4: Mediation & Standards** – Data persistence in PostGIS and exposure via pygeoapi (OGC API - Features/Processes).
-5.  **Tier 5: Client & Feedback** – Visualization in QGIS and field validation via KoboToolbox / OSM [6].
+5.  **Tier 5: Client & Feedback** – Visualization in QGIS and field validation via KoboToolbox / OSM.
 
 ## 🔬 Scientific Foundations
 OpenDR 1.0 implements several open-source algorithms for environmental and humanitarian modeling:
