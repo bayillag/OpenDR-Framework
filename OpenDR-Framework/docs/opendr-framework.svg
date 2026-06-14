@@ -10,6 +10,12 @@
       <path d="M0 0.5 L6 3 L0 5.5 Z" fill="#3b82f6"/>
     </marker>
 
+    <!-- Linear Gradient for Exposure Modeling -->
+    <linearGradient id="grad-exposure" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+
     <!-- Vector Icons Definitions -->
     <g id="icon-fire">
       <path d="M12 2C12 2 16.5 6.5 16.5 11.5C16.5 14.5 14.5 17 12 17C9.5 17 7.5 14.5 7.5 11.5C7.5 8.5 10 5.5 10 5.5C10 5.5 11.5 7.5 11.5 9C11.5 7.5 12 2 12 2Z" fill="#ef4444"/>
@@ -66,9 +72,79 @@
       <path d="M4 12h16M16 8l4 4-4 4" fill="none" stroke="#0f766e" stroke-width="1.8"/>
     </g>
 
+    <!-- Custom Exposure Modeling Icon -->
+    <g id="icon-exposure">
+      <!-- Base Radial Upward Arrow -->
+      <g id="exposure-arrow">
+        <line x1="12" y1="5.6" x2="12" y2="1.5" stroke="url(#grad-exposure)" stroke-width="1.2" stroke-linecap="round" />
+        <path d="M 10.2,3.3 L 12,1.5 L 13.8,3.3" fill="none" stroke="url(#grad-exposure)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+      </g>
+      <!-- 8-Directional Outward Arrows using rotational transforms -->
+      <use href="#exposure-arrow" />
+      <use href="#exposure-arrow" transform="rotate(45 12 12)" />
+      <use href="#exposure-arrow" transform="rotate(90 12 12)" />
+      <use href="#exposure-arrow" transform="rotate(135 12 12)" />
+      <use href="#exposure-arrow" transform="rotate(180 12 12)" />
+      <use href="#exposure-arrow" transform="rotate(225 12 12)" />
+      <use href="#exposure-arrow" transform="rotate(270 12 12)" />
+      <use href="#exposure-arrow" transform="rotate(315 12 12)" />
+      
+      <!-- Center Circle Boundary -->
+      <circle cx="12" cy="12" r="5.6" fill="none" stroke="url(#grad-exposure)" stroke-width="1.2" />
+      
+      <!-- Inner Warning Triangle -->
+      <polygon points="12,8.2 15.1,13.6 8.9,13.6" fill="none" stroke="url(#grad-exposure)" stroke-width="0.9" stroke-linejoin="round" stroke-linecap="round" />
+      <!-- Exclamation point details inside triangle -->
+      <line x1="12" y1="10.1" x2="12" y2="11.9" stroke="url(#grad-exposure)" stroke-width="0.8" stroke-linecap="round" />
+      <circle cx="12" cy="12.9" r="0.4" fill="url(#grad-exposure)" stroke="none" />
+    </g>
+
+    <!-- Custom Open Buildings Footprint Icon -->
+    <g id="icon-open-buildings">
+      <polygon points="4,5 11,3 13,8 6,10" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1.2" stroke-linejoin="round" />
+      <polygon points="14,4 20,4 20,11 17,11 17,7 14,7" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1.2" stroke-linejoin="round" />
+      <polygon points="4,13 10,11 12,17 6,19" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1.2" stroke-linejoin="round" />
+      <polygon points="13,14 19,12 21,17 15,19" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1.2" stroke-linejoin="round" />
+    </g>
+
+    <!-- Custom Apache Airflow (Disaster Logic DAG) Icon -->
+    <g id="icon-airflow">
+      <path id="airflow-blade" d="M 12,12 C 8.5,10.5 4.5,9 2,4.5 C 6.5,4.5 11,6.5 12,12 Z" />
+      <use href="#airflow-blade" fill="#e13c2c" />
+      <use href="#airflow-blade" fill="#00b5e2" transform="rotate(90 12 12)" />
+      <use href="#airflow-blade" fill="#10b981" transform="rotate(180 12 12)" />
+      <use href="#airflow-blade" fill="#1d4ed8" transform="rotate(270 12 12)" />
+      <circle cx="12" cy="12" r="1.1" fill="#475569" stroke="#ffffff" stroke-width="0.5" />
+    </g>
+
+    <!-- Custom STAC API Icon -->
+    <g id="icon-stac">
+      <path d="M 2 12 L 2 4 L 11 4" fill="none" stroke="#c1e1ec" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M 5 15 L 5 7 L 14 7" fill="none" stroke="#00b4a7" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M 8 18 L 8 10 L 17 10" fill="none" stroke="#104a60" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M 10 21 L 19 21 L 19 13" fill="none" stroke="#104a60" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+      <circle cx="13.5" cy="15.5" r="4" fill="none" stroke="#00b4a7" stroke-width="1.1" />
+      <path d="M 11.5 12.5 Q 10 14.5 11.5 17.5" fill="none" stroke="#00b4a7" stroke-width="0.8" stroke-linecap="round" />
+      <path d="M 13.5 12 Q 16.5 13.5 14.5 15 T 16.5 18" fill="none" stroke="#00b4a7" stroke-width="0.8" stroke-linecap="round" />
+    </g>
+
+    <!-- Custom pygeoapi Icon -->
+    <g id="icon-pygeoapi">
+      <g fill="#2d6896">
+        <rect x="2.5" y="9.75" width="19" height="4.5" rx="1.2" />
+        <rect x="2.5" y="9.75" width="19" height="4.5" rx="1.2" transform="rotate(45 12 12)" />
+        <rect x="2.5" y="9.75" width="19" height="4.5" rx="1.2" transform="rotate(90 12 12)" />
+        <rect x="2.5" y="9.75" width="19" height="4.5" rx="1.2" transform="rotate(135 12 12)" />
+        <circle cx="12" cy="12" r="7.5" />
+      </g>
+      <circle cx="12" cy="12" r="6.2" fill="#ffffff" />
+      <circle cx="12" cy="12" r="6.2" fill="none" stroke="#2d6896" stroke-width="1.2" />
+      <path d="M 12 15.5 C 10 13.5, 9.5 12, 9.5 10.5 A 2.5 2.5 0 0 1 14.5 10.5 C 14.5 12, 14 13.5, 12 15.5 Z" fill="none" stroke="#3c3c3c" stroke-width="1.2" />
+      <circle cx="12" cy="10.5" r="0.9" fill="none" stroke="#3c3c3c" stroke-width="0.8" />
+    </g>
+
     <!-- Custom Google Earth Engine (GEE) Icon -->
     <g id="icon-gee">
-      <!-- Outer Gray Gear base with 8 teeth -->
       <g fill="#7e858c">
         <rect x="1" y="9.25" width="22" height="5.5" rx="1.5" />
         <rect x="1" y="9.25" width="22" height="5.5" rx="1.5" transform="rotate(45 12 12)" />
@@ -76,14 +152,11 @@
         <rect x="1" y="9.25" width="22" height="5.5" rx="1.5" transform="rotate(135 12 12)" />
         <circle cx="12" cy="12" r="9.25" />
       </g>
-      <!-- Clip-path to restrict globe features to the inner gear circle -->
       <clipPath id="gee-globe-clip">
         <circle cx="12" cy="12" r="7.2" />
       </clipPath>
-      <!-- Inner Globe -->
       <g clip-path="url(#gee-globe-clip)">
         <circle cx="12" cy="12" r="7.2" fill="#2b66e3" />
-        <!-- Three tapered white swirling bands -->
         <path d="M 5 8.5 C 9 6, 15 6.5, 18.8 10 C 15 7.5, 9 7.2, 5 8.5 Z" fill="#ffffff" />
         <path d="M 4.8 12 C 8 9.5, 12 14.5, 19.2 13.5 C 15 13.8, 10.5 10.2, 4.8 12 Z" fill="#ffffff" />
         <path d="M 5.2 16.2 C 9 18.5, 15 18.5, 18.8 16.8 C 14.5 18.2, 9.5 17.5, 5.2 16.2 Z" fill="#ffffff" />
@@ -160,16 +233,13 @@
 
     <!-- Custom GRACE Groundwater Icon -->
     <g id="icon-grace-groundwater">
-      <!-- 6 Light Blue Falling Droplets -->
       <path d="M12 1 C12 1 11 2.5 11 3.5 A1 1 0 0 0 13 3.5 C13 2.5 12 1 12 1 Z" fill="#0ea5e9"/>
       <path d="M9.5 4.2 C9.5 4.2 8.5 5.7 8.5 6.7 A1 1 0 0 0 10.5 6.7 C10.5 5.7 9.5 4.2 9.5 4.2 Z" fill="#0ea5e9"/>
       <path d="M14.5 4.2 C14.5 4.2 13.5 5.7 13.5 6.7 A1 1 0 0 0 15.5 6.7 C15.5 5.7 14.5 4.2 14.5 4.2 Z" fill="#0ea5e9"/>
       <path d="M7 7.4 C7 7.4 6 8.9 6 9.9 A1 1 0 0 0 8 9.9 C8 8.9 7 7.4 7 7.4 Z" fill="#0ea5e9"/>
       <path d="M12 7.4 C12 7.4 11 8.9 11 9.9 A1 1 0 0 0 13 9.9 C13 8.9 12 7.4 12 7.4 Z" fill="#0ea5e9"/>
       <path d="M17 7.4 C17 7.4 16 8.9 16 9.9 A1 1 0 0 0 18 9.9 C18 8.9 17 7.4 17 7.4 Z" fill="#0ea5e9"/>
-      <!-- Dark Blue Wave Base Drop -->
       <path d="M 4 13 C 4 16 7 22 12 22 C 17 22 20 16 20 13 C 17.5 14.5 16.5 11.5 14.5 13 C 12.5 14.5 11.5 11.5 9.5 13 C 7.5 14.5 6.5 11.5 4 13 Z" fill="#0054a6"/>
-      <!-- White Horizontal Wave Divider inside base -->
       <path d="M 3.3 17 C 5.5 19 8.5 15 12 17.5 C 15.5 20 18.5 16 20.7 17" fill="none" stroke="#ffffff" stroke-width="1" stroke-linecap="round"/>
     </g>
 
@@ -235,8 +305,8 @@
     <use href="#icon-cloud" x="65" y="378" width="18" height="18"/>
     <text x="92" y="392" font-size="13" font-weight="600" fill="#334155">ERA5-Land Hourly</text>
 
-    <use href="#icon-building" x="65" y="405" width="18" height="18"/>
-    <text x="92" y="419" font-size="13" font-weight="600" fill="#334155">Open Buildings</text>
+    <use href="#icon-open-buildings" x="65" y="405" width="18" height="18"/>
+    <text x="92" y="419" font-size="13" font-weight="600" fill="#1a73e8">Open Buildings</text>
 
 
     <!-- 2. PROCESSING & ANALYSIS -->
@@ -245,8 +315,8 @@
     <text x="440" y="110" font-size="15" font-weight="bold" fill="#ffffff" text-anchor="middle">Processing &amp; Analysis</text>
 
     <!-- Processing Items -->
-    <use href="#icon-api" x="330" y="135" width="18" height="18"/>
-    <text x="358" y="149" font-size="13" font-weight="600" fill="#334155">Pygeoapi</text>
+    <use href="#icon-pygeoapi" x="330" y="135" width="18" height="18"/>
+    <text x="358" y="149" font-size="13" font-weight="600" fill="#2d6896">py<tspan fill="#3c3c3c">geoapi</tspan></text>
 
     <use href="#icon-dask-geopandas" x="330" y="166" width="18" height="18"/>
     <text x="358" y="180" font-size="13" font-weight="600" fill="#15803d">Dask-GeoPandas</text>
@@ -257,16 +327,15 @@
     <use href="#icon-torchgeo" x="330" y="228" width="18" height="18"/>
     <text x="358" y="242" font-size="13" font-weight="600" fill="#e05c3c">Torch<tspan fill="#2970d4">Geo</tspan></text>
 
-    <use href="#icon-arrows" x="330" y="259" width="18" height="18"/>
-    <text x="358" y="273" font-size="13" font-weight="600" fill="#701a75">Disaster Logic DAG</text>
+    <use href="#icon-airflow" x="330" y="259" width="18" height="18"/>
+    <text x="358" y="273" font-size="13" font-weight="600" fill="#e13c2c">Disaster Logic <tspan fill="#00b5e2">DAG</tspan></text>
 
-    <use href="#icon-api" x="330" y="290" width="18" height="18"/>
-    <text x="358" y="304" font-size="13" font-weight="600" fill="#334155">STAC API</text>
+    <use href="#icon-stac" x="330" y="290" width="18" height="18"/>
+    <text x="358" y="304" font-size="13" font-weight="600" fill="#104a60">STAC <tspan fill="#00b4a7">API</tspan></text>
 
     <use href="#icon-db" x="330" y="321" width="18" height="18"/>
     <text x="358" y="335" font-size="13" font-weight="600" fill="#334155">PostGIS Database</text>
 
-    <!-- Custom Google Earth Engine (GEE) Icon Applied Here -->
     <use href="#icon-gee" x="330" y="352" width="18" height="18"/>
     <text x="358" y="366" font-size="13" font-weight="600" fill="#2b66e3">Google Earth Engine (GEE)</text>
 
@@ -282,8 +351,9 @@
     <use href="#icon-flood-assessment" x="605" y="190" width="18" height="18"/>
     <text x="633" y="204" font-size="13" font-weight="600" fill="#0284c7">Flood Assessment</text>
 
-    <use href="#icon-building" x="605" y="235" width="18" height="18"/>
-    <text x="633" y="249" font-size="13" font-weight="600" fill="#334155">Exposure Modeling</text>
+    <!-- Custom Exposure Modeling Icon and Styled Text Applied Here -->
+    <use href="#icon-exposure" x="605" y="235" width="18" height="18"/>
+    <text x="633" y="249" font-size="13" font-weight="600" fill="#7c3aed">Exposure Modeling</text>
 
     <use href="#icon-disease" x="605" y="280" width="18" height="18"/>
     <text x="633" y="294" font-size="13" font-weight="600" fill="#65a30d">Vector Borne Disease Warning</text>
@@ -341,26 +411,26 @@
         <tbody>
           <tr style="border-bottom: 1px solid #e2e8f0;">
             <td style="padding: 10px; font-weight: bold; color: #1e40af; background-color: #f8fafc; border-right: 1px solid #e2e8f0; vertical-align: middle;">Data Ingestion</td>
-            <td style="padding: 10px; color: #334155; border-right: 1px solid #cbd5e1; vertical-align: middle; line-height: 1.4;">Multi-sensor data acquisition</td>
-            <td style="padding: 10px; color: #475569; font-size: 11px; font-family: monospace, Courier; border-right: 1px solid #cbd5e1; vertical-align: middle; line-height: 1.4;">FIRMS, Sentinel-1/2, ALOS-2, Landsat 8/9, GOES, GRACE, CHIRPS, ERA5 Climate Data, ERA5-Land, Open Buildings</td>
+            <td style="padding: 10px; color: #334155; border-right: 1px solid #cbd5e1; vertical-align: middle; line-height: 1.4; background-color: #f0f7ff;">Multi-sensor data acquisition</td>
+            <td style="padding: 10px; color: #475569; font-size: 11px; font-family: monospace, Courier; border-right: 1px solid #cbd5e1; vertical-align: middle; line-height: 1.4; background-color: #f0f7ff;">FIRMS, Sentinel-1/2, ALOS-2, Landsat 8/9, GOES, GRACE, CHIRPS, ERA5 Climate Data, ERA5-Land, Open Buildings</td>
             <td style="padding: 10px; font-weight: bold; color: #475569; vertical-align: middle; line-height: 1.4; background-color: #f8fafc;">Raw Satellite Data</td>
           </tr>
           <tr style="border-bottom: 1px solid #e2e8f0;">
             <td style="padding: 10px; font-weight: bold; color: #15803d; background-color: #f8fafc; border-right: 1px solid #e2e8f0; vertical-align: middle;">Preprocessing &amp; Analysis</td>
-            <td style="padding: 10px; color: #334155; border-right: 1px solid #cbd5e1; vertical-align: middle; line-height: 1.4;">Distributed geospatial processing</td>
-            <td style="padding: 10px; color: #475569; font-size: 11px; font-family: monospace, Courier; border-right: 1px solid #cbd5e1; vertical-align: middle; line-height: 1.4;">Pygeoapi, Dask-GeoPandas, GeoAI, TorchGeo, Disaster Logic DAG, STAC API, PostGIS Database, GEE</td>
+            <td style="padding: 10px; color: #334155; border-right: 1px solid #cbd5e1; vertical-align: middle; line-height: 1.4; background-color: #f0f7ff;">Distributed geospatial processing</td>
+            <td style="padding: 10px; color: #475569; font-size: 11px; font-family: monospace, Courier; border-right: 1px solid #cbd5e1; vertical-align: middle; line-height: 1.4; background-color: #f0f7ff;">Pygeoapi, Dask-GeoPandas, GeoAI, TorchGeo, Disaster Logic DAG, STAC API, PostGIS Database, GEE</td>
             <td style="padding: 10px; font-weight: bold; color: #475569; vertical-align: middle; line-height: 1.4; background-color: #f8fafc;">Processed Imagery</td>
           </tr>
           <tr style="border-bottom: 1px solid #e2e8f0;">
             <td style="padding: 10px; font-weight: bold; color: #475569; background-color: #f8fafc; border-right: 1px solid #e2e8f0; vertical-align: middle;">Intelligence Modules</td>
-            <td style="padding: 10px; color: #334155; border-right: 1px solid #cbd5e1; vertical-align: middle; line-height: 1.4;">Fire, Flood, Exposure Risk Modeling, Vector Disease Early Warning</td>
-            <td style="padding: 10px; color: #475569; font-size: 11px; font-family: monospace, Courier; border-right: 1px solid #cbd5e1; vertical-align: middle; line-height: 1.4;">Fire Detection, Flood Assessment, Exposure Modeling, Vector Borne Disease Module</td>
+            <td style="padding: 10px; color: #334155; border-right: 1px solid #cbd5e1; vertical-align: middle; line-height: 1.4; background-color: #f0f7ff;">Fire, Flood, Exposure Risk Modeling, Vector Disease Early Warning</td>
+            <td style="padding: 10px; color: #475569; font-size: 11px; font-family: monospace, Courier; border-right: 1px solid #cbd5e1; vertical-align: middle; line-height: 1.4; background-color: #f0f7ff;">Fire Detection, Flood Assessment, Exposure Modeling, Vector Borne Disease Module</td>
             <td style="padding: 10px; font-weight: bold; color: #475569; vertical-align: middle; line-height: 1.4; background-color: #f8fafc;">Risk Assessments</td>
           </tr>
           <tr>
             <td style="padding: 10px; font-weight: bold; color: #b91c1c; background-color: #f8fafc; border-right: 1px solid #e2e8f0; vertical-align: middle;">Decision Support</td>
-            <td style="padding: 10px; color: #334155; border-right: 1px solid #cbd5e1; vertical-align: middle; line-height: 1.4;">Visualization, alerting, and participatory input</td>
-            <td style="padding: 10px; color: #475569; font-size: 11px; font-family: monospace, Courier; border-right: 1px solid #cbd5e1; vertical-align: middle; line-height: 1.4;">Risk Maps, Dashboards, Alert Systems, Feedback Loop</td>
+            <td style="padding: 10px; color: #334155; border-right: 1px solid #cbd5e1; vertical-align: middle; line-height: 1.4; background-color: #f0f7ff;">Visualization, alerting, and participatory input</td>
+            <td style="padding: 10px; color: #475569; font-size: 11px; font-family: monospace, Courier; border-right: 1px solid #cbd5e1; vertical-align: middle; line-height: 1.4; background-color: #f0f7ff;">Risk Maps, Dashboards, Alert Systems, Feedback Loop</td>
             <td style="padding: 10px; font-weight: bold; color: #475569; vertical-align: middle; line-height: 1.4; background-color: #f8fafc;">Actionable Insights</td>
           </tr>
         </tbody>
