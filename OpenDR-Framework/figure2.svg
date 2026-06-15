@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" width="100%" height="100%" style="font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;">
+  <defs>
+    <!-- Card Drop Shadow -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.06"/>
+    </filter>
+
+    <!-- Connector Arrow Head -->
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="5" refY="4" orient="auto">
+      <path d="M 1.5 1 L 6.5 4 L 1.5 7 Z" fill="#64748b" />
+    </marker>
+
+    <!-- Vector Icons -->
+    <!-- PLATEAU 3D CityGML Icon -->
+    <g id="icon-3d-city" fill="none" stroke="#7c3aed" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M12 2 L20 6.5 L20 15.5 L12 20 L4 15.5 L4 6.5 Z" />
+      <line x1="12" y1="2" x2="12" y2="20" />
+      <line x1="4" y1="6.5" x2="12" y2="11" />
+      <line x1="20" y1="6.5" x2="12" y2="11" />
+      <path d="M8 8.75 L12 10.75 L16 8.75" />
+      <path d="M12 11 L12 16" />
+    </g>
+
+    <!-- Sentinel-5P NO2 Plume/Grid Icon -->
+    <g id="icon-no2-grids" fill="none" stroke="#0d9488" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+      <circle cx="12" cy="12" r="9" />
+      <path d="M3 12h18 M12 3v18" stroke-dasharray="2,2" />
+      <path d="M7 8.5 C9 10.5, 11 6.5, 13 8.5 S15 11.5, 17 9.5" stroke-width="1.8" stroke="#0f766e" />
+    </g>
+
+    <!-- Landsat LST Anomaly Grid Icon -->
+    <g id="icon-lst-anomaly" fill="none" stroke="#ea580c" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+      <rect x="4" y="4" width="16" height="16" rx="2" />
+      <path d="M8 12 Q10 8 12 12 T16 12" stroke-width="2" stroke="#c2410c" />
+      <circle cx="12" cy="10" r="1.5" fill="#ea580c" />
+    </g>
+
+    <!-- Apache Sedona Spatial Join Icon -->
+    <g id="icon-spatial-join" fill="none" stroke="#1e3a8a" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+      <circle cx="10" cy="12" r="5" stroke="#2563eb" />
+      <circle cx="14" cy="12" r="5" stroke="#1d4ed8" />
+      <path d="M10.8 10 A2 2 0 0 1 13.2 10" fill="#93c5fd" opacity="0.4" />
+    </g>
+
+    <!-- Hazard Vulnerability Icon -->
+    <g id="icon-hazard-map" fill="none" stroke="#be123c" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M4 16 L10 12 L16 16 L20 12 M4 20 L10 16 L16 20 L20 16" />
+      <polygon points="12,3 15,9 9,9" fill="#ffe4e6" stroke-width="1.2" />
+      <line x1="12" y1="5" x2="12" y2="7" stroke-width="1" />
+    </g>
+  </defs>
+
+  <!-- Outer Canvas Container -->
+  <rect width="800" height="460" rx="12" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5" />
+
+  <!-- Connector Lines -->
+  <g stroke="#64748b" stroke-width="1.5" fill="none">
+    <!-- PLATEAU -> Sedona -->
+    <path d="M 400 110 L 400 182" marker-end="url(#arrow)" />
+    <!-- Sentinel-5P -> Sedona -->
+    <path d="M 260 230 L 282 230" marker-end="url(#arrow)" />
+    <!-- Landsat-8 -> Sedona -->
+    <path d="M 540 230 L 518 230" marker-end="url(#arrow)" />
+    <!-- Sedona -> Vulnerability Map -->
+    <path d="M 400 270 L 400 332" marker-end="url(#arrow)" />
+  </g>
+
+  <!-- Architecture Nodes Group -->
+  <g filter="url(#shadow)">
+    <!-- 1. PROJECT PLATEAU NODE (Top Center) -->
+    <rect x="260" y="40" width="280" height="70" fill="#f5f3ff" stroke="#ddd6fe" stroke-width="1.5" rx="8" />
+    <use href="#icon-3d-city" x="275" y="63" width="24" height="24" />
+    <text x="315" y="70" font-size="14" font-weight="bold" fill="#1e1b4b">Project PLATEAU (3D GML)</text>
+    <text x="315" y="88" font-size="11" fill="#6d28d9">3D City Model CityGML Dataset</text>
+
+    <!-- 2. SENTINEL-5P NO2 GRIDS NODE (Middle Left) -->
+    <rect x="45" y="190" width="215" height="80" fill="#f0fdfa" stroke="#ccfbf1" stroke-width="1.5" rx="8" />
+    <use href="#icon-no2-grids" x="60" y="218" width="24" height="24" />
+    <text x="95" y="222" font-size="13" font-weight="bold" fill="#042f2e">Sentinel-5P NO2 Grids</text>
+    <text x="95" y="240" font-size="11" fill="#0d9488">Tropospheric NO2 Column</text>
+
+    <!-- 3. APACHE SEDONA SPATIAL JOIN NODE (Middle Center) -->
+    <rect x="290" y="190" width="220" height="80" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5" rx="8" />
+    <use href="#icon-spatial-join" x="305" y="218" width="24" height="24" />
+    <text x="340" y="222" font-size="13" font-weight="bold" fill="#172554">Apache Sedona</text>
+    <text x="340" y="240" font-size="11" fill="#1d4ed8">Parallel Spatial Join Analysis</text>
+
+    <!-- 4. LANDSAT-8 LST ANOMALY NODE (Middle Right) -->
+    <rect x="540" y="190" width="215" height="80" fill="#fff7ed" stroke="#ffedd5" stroke-width="1.5" rx="8" />
+    <use href="#icon-lst-anomaly" x="555" y="218" width="24" height="24" />
+    <text x="590" y="222" font-size="13" font-weight="bold" fill="#431407">Landsat-8 LST Anomaly</text>
+    <text x="590" y="240" font-size="11" fill="#ea580c">Land Surface Temp Anomaly</text>
+
+    <!-- 5. MULTI-HAZARD VULNERABILITY MAP NODE (Bottom Center) -->
+    <rect x="240" y="340" width="320" height="80" fill="#fff1f2" stroke="#ffe4e6" stroke-width="1.5" rx="8" />
+    <use href="#icon-hazard-map" x="255" y="368" width="24" height="24" />
+    <text x="295" y="372" font-size="14" font-weight="bold" fill="#4c0519">Multi-Hazard Vulnerability Map</text>
+    <text x="295" y="390" font-size="11" fill="#be123c">Composite Risk &amp; Exposure Analysis</text>
+  </g>
+</svg>
