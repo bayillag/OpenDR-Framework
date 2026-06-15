@@ -61,10 +61,6 @@
       <circle cx="12" cy="17" r="1.2" fill="#be123c"/>
       <rect x="11.2" y="9" width="1.6" height="5" rx="0.5" fill="#be123c"/>
     </g>
-    <g id="icon-disease">
-      <circle cx="12" cy="12" r="4" fill="#65a30d"/>
-      <path d="M8 8l-3-3M16 16l3 3M16 8l3-3M8 16l-3 3M6 12H2M22 12h-4" stroke="#65a30d" stroke-width="1.5"/>
-    </g>
     <g id="icon-chat">
       <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10z" fill="none" stroke="#2563eb" stroke-width="1.8"/>
     </g>
@@ -72,14 +68,45 @@
       <path d="M4 12h16M16 8l4 4-4 4" fill="none" stroke="#0f766e" stroke-width="1.8"/>
     </g>
 
+    <!-- Custom Vector-Borne Disease Mosquito Icon -->
+    <g id="icon-mosquito">
+      <!-- 6 Jointed Legs (Coral #e05c3c) -->
+      <!-- Front Legs -->
+      <path d="M 10.5 8 L 8.5 6 L 6 4" fill="none" stroke="#e05c3c" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M 13.5 8 L 15.5 6 L 18 4" fill="none" stroke="#e05c3c" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+      <!-- Middle Legs (Knee-Shin Joint Structure) -->
+      <path d="M 10.5 11.5 L 8.5 9 L 8.5 16 L 6.5 20" fill="none" stroke="#e05c3c" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M 13.5 11.5 L 15.5 9 L 15.5 16 L 17.5 20" fill="none" stroke="#e05c3c" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+      <!-- Back Legs -->
+      <path d="M 10.5 13 L 9 11.5 L 9 17.5 L 7 21" fill="none" stroke="#e05c3c" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M 13.5 13 L 15 11.5 L 15 17.5 L 17 21" fill="none" stroke="#e05c3c" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+
+      <!-- Head Proboscis & Antennae -->
+      <line x1="12" y1="5" x2="12" y2="1.5" stroke="#e05c3c" stroke-width="0.8" stroke-linecap="round" />
+      <path d="M 11.3 5 L 10.2 2.8" fill="none" stroke="#e05c3c" stroke-width="0.8" stroke-linecap="round" />
+      <path d="M 12.7 5 L 13.8 2.8" fill="none" stroke="#e05c3c" stroke-width="0.8" stroke-linecap="round" />
+
+      <!-- Body / Thorax / Head (Navy #2a3042) -->
+      <circle cx="12" cy="6" r="1.2" fill="#2a3042" />
+      <ellipse cx="12" cy="10" rx="1.5" ry="2.2" fill="#2a3042" />
+      
+      <!-- Horizontal Teardrop Wings -->
+      <path d="M 10.5 10 C 8 9.2 4 9 3.5 10.2 C 3 11.4 7 12.2 10.5 11 Z" fill="#2a3042" />
+      <path d="M 13.5 10 C 16 9.2 20 9 20.5 10.2 C 21 11.4 17 12.2 13.5 11 Z" fill="#2a3042" />
+
+      <!-- Segmented Abdomen -->
+      <path d="M 10.5 12 C 10.5 12 10 18.5 12 20.5 C 14 18.5 13.5 12 13.5 12 Z" fill="#2a3042" />
+      <line x1="10.4" y1="14" x2="13.6" y2="14" stroke="#ffffff" stroke-width="0.6" />
+      <line x1="10.8" y1="16" x2="13.2" y2="16" stroke="#ffffff" stroke-width="0.6" />
+      <line x1="11.2" y1="18" x2="12.8" y2="18" stroke="#ffffff" stroke-width="0.6" />
+    </g>
+
     <!-- Custom Exposure Modeling Icon -->
     <g id="icon-exposure">
-      <!-- Base Radial Upward Arrow -->
       <g id="exposure-arrow">
         <line x1="12" y1="5.6" x2="12" y2="1.5" stroke="url(#grad-exposure)" stroke-width="1.2" stroke-linecap="round" />
         <path d="M 10.2,3.3 L 12,1.5 L 13.8,3.3" fill="none" stroke="url(#grad-exposure)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
       </g>
-      <!-- 8-Directional Outward Arrows using rotational transforms -->
       <use href="#exposure-arrow" />
       <use href="#exposure-arrow" transform="rotate(45 12 12)" />
       <use href="#exposure-arrow" transform="rotate(90 12 12)" />
@@ -88,13 +115,8 @@
       <use href="#exposure-arrow" transform="rotate(225 12 12)" />
       <use href="#exposure-arrow" transform="rotate(270 12 12)" />
       <use href="#exposure-arrow" transform="rotate(315 12 12)" />
-      
-      <!-- Center Circle Boundary -->
       <circle cx="12" cy="12" r="5.6" fill="none" stroke="url(#grad-exposure)" stroke-width="1.2" />
-      
-      <!-- Inner Warning Triangle -->
       <polygon points="12,8.2 15.1,13.6 8.9,13.6" fill="none" stroke="url(#grad-exposure)" stroke-width="0.9" stroke-linejoin="round" stroke-linecap="round" />
-      <!-- Exclamation point details inside triangle -->
       <line x1="12" y1="10.1" x2="12" y2="11.9" stroke="url(#grad-exposure)" stroke-width="0.8" stroke-linecap="round" />
       <circle cx="12" cy="12.9" r="0.4" fill="url(#grad-exposure)" stroke="none" />
     </g>
@@ -274,39 +296,42 @@
     <path d="M50 93 a8 8 0 0 1 8 -8 h224 a8 8 0 0 1 8 8 v32 h-240 z" fill="#1e40af"/>
     <text x="170" y="110" font-size="15" font-weight="bold" fill="#ffffff" text-anchor="middle">Data Ingestion</text>
 
-    <!-- Data Ingestion List Items -->
+    <!-- Data Ingestion List Items (25px vertical spacing perfectly aligned for 12 items) -->
     <use href="#icon-fire" x="65" y="135" width="18" height="18"/>
     <text x="92" y="149" font-size="13" font-weight="600" fill="#334155">FIRMS Hotspots</text>
 
-    <use href="#icon-satellite" x="65" y="162" width="18" height="18"/>
-    <text x="92" y="176" font-size="13" font-weight="600" fill="#334155">Sentinel-1 SAR</text>
+    <use href="#icon-satellite" x="65" y="160" width="18" height="18"/>
+    <text x="92" y="174" font-size="13" font-weight="600" fill="#334155">Sentinel-1 SAR</text>
 
-    <use href="#icon-satellite" x="65" y="189" width="18" height="18"/>
-    <text x="92" y="203" font-size="13" font-weight="600" fill="#334155">ALOS-2 PALSAR-2</text>
+    <use href="#icon-satellite" x="65" y="185" width="18" height="18"/>
+    <text x="92" y="199" font-size="13" font-weight="600" fill="#334155">ALOS-2 PALSAR-2</text>
 
-    <use href="#icon-satellite" x="65" y="216" width="18" height="18"/>
-    <text x="92" y="230" font-size="13" font-weight="600" fill="#334155">Sentinel-2 MSI</text>
+    <use href="#icon-satellite" x="65" y="210" width="18" height="18"/>
+    <text x="92" y="224" font-size="13" font-weight="600" fill="#334155">Sentinel-2 MSI</text>
 
-    <use href="#icon-satellite" x="65" y="243" width="18" height="18"/>
-    <text x="92" y="257" font-size="13" font-weight="600" fill="#334155">Landsat 8/9</text>
+    <use href="#icon-satellite" x="65" y="235" width="18" height="18"/>
+    <text x="92" y="249" font-size="13" font-weight="600" fill="#334155">Landsat 8/9</text>
 
-    <use href="#icon-satellite" x="65" y="270" width="18" height="18"/>
-    <text x="92" y="284" font-size="13" font-weight="600" fill="#334155">GOES-16/17</text>
+    <use href="#icon-satellite" x="65" y="260" width="18" height="18"/>
+    <text x="92" y="274" font-size="13" font-weight="600" fill="#334155">GOES-16/17</text>
 
-    <use href="#icon-grace-groundwater" x="65" y="297" width="18" height="18"/>
-    <text x="92" y="311" font-size="13" font-weight="600" fill="#1e3a8a">GRACE Groundwater</text>
+    <use href="#icon-grace-groundwater" x="65" y="285" width="18" height="18"/>
+    <text x="92" y="299" font-size="13" font-weight="600" fill="#1e3a8a">GRACE Groundwater</text>
 
-    <use href="#icon-cloud" x="65" y="324" width="18" height="18"/>
-    <text x="92" y="338" font-size="13" font-weight="600" fill="#334155">CHIRPS Rainfall</text>
+    <use href="#icon-cloud" x="65" y="310" width="18" height="18"/>
+    <text x="92" y="324" font-size="13" font-weight="600" fill="#334155">CHIRPS Precipitation</text>
 
-    <use href="#icon-cloud" x="65" y="351" width="18" height="18"/>
-    <text x="92" y="365" font-size="13" font-weight="600" fill="#334155">ERA5 Climate Data</text>
+    <use href="#icon-satellite" x="65" y="335" width="18" height="18"/>
+    <text x="92" y="349" font-size="13" font-weight="600" fill="#1e3a8a">GPM (IMERG) Data</text>
 
-    <use href="#icon-cloud" x="65" y="378" width="18" height="18"/>
-    <text x="92" y="392" font-size="13" font-weight="600" fill="#334155">ERA5-Land Hourly</text>
+    <use href="#icon-cloud" x="65" y="360" width="18" height="18"/>
+    <text x="92" y="374" font-size="13" font-weight="600" fill="#334155">ERA5 Climate Data</text>
 
-    <use href="#icon-open-buildings" x="65" y="405" width="18" height="18"/>
-    <text x="92" y="419" font-size="13" font-weight="600" fill="#1a73e8">Open Buildings</text>
+    <use href="#icon-cloud" x="65" y="385" width="18" height="18"/>
+    <text x="92" y="399" font-size="13" font-weight="600" fill="#334155">ERA5-Land Hourly</text>
+
+    <use href="#icon-open-buildings" x="65" y="410" width="18" height="18"/>
+    <text x="92" y="424" font-size="13" font-weight="600" fill="#1a73e8">Open Buildings</text>
 
 
     <!-- 2. PROCESSING & ANALYSIS -->
@@ -351,12 +376,11 @@
     <use href="#icon-flood-assessment" x="605" y="190" width="18" height="18"/>
     <text x="633" y="204" font-size="13" font-weight="600" fill="#0284c7">Flood Assessment</text>
 
-    <!-- Custom Exposure Modeling Icon and Styled Text Applied Here -->
     <use href="#icon-exposure" x="605" y="235" width="18" height="18"/>
     <text x="633" y="249" font-size="13" font-weight="600" fill="#7c3aed">Exposure Modeling</text>
 
-    <use href="#icon-disease" x="605" y="280" width="18" height="18"/>
-    <text x="633" y="294" font-size="13" font-weight="600" fill="#65a30d">Vector Borne Disease Warning</text>
+    <use href="#icon-mosquito" x="605" y="280" width="18" height="18"/>
+    <text x="633" y="294" font-size="13" font-weight="600" fill="#e05c3c">Vector-Borne <tspan fill="#2a3042">Disease Warning</tspan></text>
 
     <!-- 4. DECISION SUPPORT -->
     <rect x="885" y="85" width="265" height="260" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" rx="8"/>
@@ -412,7 +436,7 @@
           <tr style="border-bottom: 1px solid #e2e8f0;">
             <td style="padding: 10px; font-weight: bold; color: #1e40af; background-color: #f8fafc; border-right: 1px solid #e2e8f0; vertical-align: middle;">Data Ingestion</td>
             <td style="padding: 10px; color: #334155; border-right: 1px solid #cbd5e1; vertical-align: middle; line-height: 1.4; background-color: #f0f7ff;">Multi-sensor data acquisition</td>
-            <td style="padding: 10px; color: #475569; font-size: 11px; font-family: monospace, Courier; border-right: 1px solid #cbd5e1; vertical-align: middle; line-height: 1.4; background-color: #f0f7ff;">FIRMS, Sentinel-1/2, ALOS-2, Landsat 8/9, GOES, GRACE, CHIRPS, ERA5 Climate Data, ERA5-Land, Open Buildings</td>
+            <td style="padding: 10px; color: #475569; font-size: 11px; font-family: monospace, Courier; border-right: 1px solid #cbd5e1; vertical-align: middle; line-height: 1.4; background-color: #f0f7ff;">FIRMS, Sentinel-1/2, ALOS-2, Landsat 8/9, GOES, GRACE, CHIRPS, GPM (IMERG) Data, ERA5 Climate Data, ERA5-Land, Open Buildings</td>
             <td style="padding: 10px; font-weight: bold; color: #475569; vertical-align: middle; line-height: 1.4; background-color: #f8fafc;">Raw Satellite Data</td>
           </tr>
           <tr style="border-bottom: 1px solid #e2e8f0;">
