@@ -1,146 +1,283 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 650" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 750" width="100%" height="100%">
   <defs>
     <!-- Background Grid Pattern -->
-    <pattern id="dotGrid" width="24" height="24" patternUnits="userSpaceOnUse">
-      <circle cx="2" cy="2" r="1" fill="#e2e8f0" />
+    <pattern id="cyberGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(56, 189, 248, 0.04)" stroke-width="1" />
     </pattern>
 
-    <!-- Card Drop Shadow -->
-    <filter id="subtleShadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.05" />
+    <!-- Glowing Filters -->
+    <filter id="glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    
+    <filter id="glow-green" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
     </filter>
 
-    <!-- Gradient for Left Modules -->
-    <linearGradient id="moduleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1e293b" />
-      <stop offset="100%" stop-color="#0f172a" />
+    <filter id="glow-orange" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Card Background Gradient -->
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1329" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#050914" stop-opacity="0.95" />
     </linearGradient>
 
     <!-- Arrow Marker -->
-    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#64748b" />
+    <marker id="arrow-cyan" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#00f0ff" />
     </marker>
+    
+    <!-- Wave Gradients -->
+    <linearGradient id="waveGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0c102b" stop-opacity="0" />
+      <stop offset="50%" stop-color="#141a4a" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#0c102b" stop-opacity="0" />
+    </linearGradient>
+    
+    <linearGradient id="waveGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#060919" stop-opacity="0" />
+      <stop offset="30%" stop-color="#1d2766" stop-opacity="0.25" />
+      <stop offset="70%" stop-color="#152052" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#060919" stop-opacity="0" />
+    </linearGradient>
   </defs>
 
-  <!-- Background -->
-  <rect width="900" height="650" fill="#f8fafc" />
-  <rect width="900" height="650" fill="url(#dotGrid)" />
+  <style>
+    .title-main { font-family: 'Montserrat', system-ui, -apple-system, sans-serif; font-weight: 900; font-size: 27px; fill: #ffffff; letter-spacing: 1px; }
+    .title-sub { font-family: 'Share Tech Mono', monospace, system-ui; font-weight: 700; font-size: 14px; fill: #00ff87; letter-spacing: 2px; }
+    .title-desc { font-family: 'Montserrat', system-ui, sans-serif; font-weight: 500; font-size: 13px; fill: #94a3b8; letter-spacing: 0.5px; }
+    .module-num { font-family: 'Share Tech Mono', monospace, system-ui; font-size: 9px; font-weight: 700; letter-spacing: 1.5px; }
+    .module-text { font-family: 'Montserrat', system-ui, sans-serif; font-weight: 700; font-size: 13px; fill: #ffffff; }
+    .process-text { font-family: 'Montserrat', system-ui, sans-serif; font-weight: 600; font-size: 12.5px; fill: #e2e8f0; }
+    .pill-text { font-family: 'Share Tech Mono', monospace, system-ui; font-size: 11px; font-weight: 700; fill: #00ff87; letter-spacing: 1.5px; }
+    .tech-metadata { font-family: 'Share Tech Mono', monospace, system-ui; font-size: 10px; fill: #475569; }
+    .tech-header { font-family: 'Share Tech Mono', monospace, system-ui; font-size: 10px; font-weight: 700; fill: #00f0ff; letter-spacing: 1.5px; }
+  </style>
 
-  <!-- METHODOLOGY FLOW Container -->
-  <rect x="300" y="75" width="540" height="510" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#subtleShadow)" />
+  <!-- Deep Sci-Fi Dark Background -->
+  <rect width="1000" height="750" fill="#05070f" />
   
-  <!-- Container Header Badge -->
-  <rect x="470" y="60" width="200" height="30" rx="15" fill="#0f172a" />
-  <text x="570" y="79" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" fill="#ffffff" letter-spacing="1.5" text-anchor="middle">METHODOLOGY FLOW</text>
+  <!-- Grid Layer -->
+  <rect width="1000" height="750" fill="url(#cyberGrid)" />
 
-  <!-- Central Conduit / Bus Line (Representing the ASCII '│') -->
-  <line x1="330" y1="95" x2="330" y2="565" stroke="#e2e8f0" stroke-width="2" stroke-dasharray="4 4" />
+  <!-- Atmospheric Glows (Radial Ambient Lights) -->
+  <circle cx="150" cy="450" r="280" fill="#00ff87" opacity="0.04" filter="url(#glow-green)" />
+  <circle cx="500" cy="350" r="350" fill="#f59e0b" opacity="0.03" filter="url(#glow-orange)" />
+  <circle cx="850" cy="200" r="250" fill="#d946ef" opacity="0.04" filter="url(#glow-cyan)" />
+  <circle cx="780" cy="550" r="250" fill="#00f0ff" opacity="0.03" filter="url(#glow-cyan)" />
 
-  <!-- ROW 1 -->
-  <g id="row1">
-    <!-- Left Module -->
-    <rect x="60" y="110" width="190" height="54" rx="8" fill="url(#moduleGrad)" filter="url(#subtleShadow)" />
-    <text x="76" y="130" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="700" fill="#38bdf8" letter-spacing="1">MODULE 1</text>
-    <text x="76" y="146" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#ffffff">Ingestion</text>
+  <!-- Smooth Flowing Tech Waves in Background -->
+  <path d="M -100 580 C 200 480, 500 680, 1100 530 L 1100 760 L -100 760 Z" fill="url(#waveGrad1)" />
+  <path d="M -100 620 C 150 540, 650 710, 1100 600 L 1100 760 L -100 760 Z" fill="url(#waveGrad2)" />
 
-    <!-- Connector -->
-    <path d="M 250 137 L 352 137" fill="none" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)" />
-    <!-- Intersection Node (ASCII '┼') -->
-    <circle cx="330" cy="137" r="4" fill="#6366f1" stroke="#ffffff" stroke-width="1.5" />
-
-    <!-- Right Process Card -->
-    <rect x="360" y="110" width="450" height="54" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#subtleShadow)" />
-    <rect x="360" y="110" width="4" height="54" rx="2" fill="#6366f1" />
-    <text x="378" y="142" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="500" fill="#1e293b">Environmental Data Processing &amp; Feature Engineering</text>
+  <!-- HEADER SECTION -->
+  <g id="header-group" transform="translate(60, 45)">
+    <text x="0" y="25" class="title-main">ONE HEALTH DISEASE INTELLIGENCE</text>
+    <text x="0" y="52" class="title-sub">MULTI-AGENT SPATIOTEMPORAL FOREWARNING</text>
+    <text x="422" y="52" class="title-desc">&amp; EPIDEMIC MODELING FOR LIVESTOCK PATHOGENS</text>
+    <!-- Accent Line -->
+    <rect x="0" y="65" width="880" height="1" fill="rgba(255, 255, 255, 0.08)" />
+    <rect x="0" y="65" width="120" height="1.5" fill="#00ff87" />
   </g>
 
-  <!-- ROW 2 -->
-  <g id="row2">
-    <!-- Left Module -->
-    <rect x="60" y="185" width="190" height="54" rx="8" fill="url(#moduleGrad)" filter="url(#subtleShadow)" />
-    <text x="76" y="205" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="700" fill="#38bdf8" letter-spacing="1">MODULE 2</text>
-    <text x="76" y="221" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#ffffff">ML Engine</text>
-
-    <!-- Connector -->
-    <path d="M 250 212 L 352 212" fill="none" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)" />
-    <!-- Intersection Node -->
-    <circle cx="330" cy="212" r="4" fill="#0d9488" stroke="#ffffff" stroke-width="1.5" />
-
-    <!-- Right Process Card -->
-    <rect x="360" y="185" width="450" height="54" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#subtleShadow)" />
-    <rect x="360" y="185" width="4" height="54" rx="2" fill="#0d9488" />
-    <text x="378" y="217" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="500" fill="#1e293b">Supervised Ensemble Outbreak Projections (Month T+2)</text>
+  <!-- METHODOLOGY FLOW CONTAINER -->
+  <rect x="310" y="145" width="630" height="520" rx="16" fill="url(#cardGrad)" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1.5" />
+  <rect x="310" y="145" width="630" height="520" rx="16" fill="none" stroke="rgba(0, 240, 255, 0.05)" stroke-width="1" />
+  
+  <!-- Container Header Inside -->
+  <g transform="translate(340, 145)">
+    <path d="M 0 0 L 195 0 L 215 24 L 0 24 Z" fill="rgba(0, 240, 255, 0.08)" />
+    <text x="12" y="16" class="tech-header">ETHIOPIAN IDENTITY WATERMARK</text>
   </g>
 
-  <!-- ROW 3 -->
-  <g id="row3">
-    <!-- Left Module -->
-    <rect x="60" y="260" width="190" height="54" rx="8" fill="url(#moduleGrad)" filter="url(#subtleShadow)" />
-    <text x="76" y="280" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="700" fill="#38bdf8" letter-spacing="1">MODULE 3</text>
-    <text x="76" y="296" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#ffffff">ODE Solver</text>
+  <!-- ==================== STYLIZED ETHIOPIA FINGERPRINT LAYER ==================== -->
+  <g id="ethiopia-fingerprint" opacity="0.22" stroke-width="11" stroke-linecap="round" fill="none" transform="translate(35, -5)">
+    <!-- Left Red Dome Loops (Representing Western/Central Highlands) -->
+    <path d="M 550 450 C 550 395, 580 395, 580 440 L 580 460" stroke="#ff2a5f" />
+    <path d="M 530 470 C 530 365, 600 365, 600 450 L 600 480" stroke="#ff2a5f" />
+    <path d="M 510 490 C 510 335, 620 335, 620 460 L 620 500" stroke="#ff2a5f" />
+    
+    <!-- Left/Center Yellow Dome Loops -->
+    <path d="M 490 510 C 490 305, 640 305, 640 470 L 640 520" stroke="#ffcc00" />
+    <path d="M 470 530 C 470 275, 660 275, 660 480 L 660 540" stroke="#ffcc00" />
+    
+    <!-- Left/Top Green Dome Loops -->
+    <path d="M 450 510 C 450 245, 680 245, 680 490" stroke="#00ff87" />
+    <path d="M 470 420 C 470 215, 700 215, 700 460" stroke="#00ff87" />
 
-    <!-- Connector -->
-    <path d="M 250 287 L 352 287" fill="none" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)" />
-    <!-- Intersection Node -->
-    <circle cx="330" cy="287" r="4" fill="#6366f1" stroke="#ffffff" stroke-width="1.5" />
-
-    <!-- Right Process Card -->
-    <rect x="360" y="260" width="450" height="54" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#subtleShadow)" />
-    <rect x="360" y="260" width="4" height="54" rx="2" fill="#6366f1" />
-    <text x="378" y="292" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="500" fill="#1e293b">Mechanistic Simulations, Stability &amp; Optimal Control</text>
+    <!-- Right Blue/Green Loops (Representing the Eastern Somali Region Beak) -->
+    <path d="M 670 490 C 690 470, 710 450, 730 450 C 750 450, 760 460, 760 480 C 760 500, 730 520, 710 520" stroke="#00f0ff" />
+    <path d="M 670 460 C 700 430, 730 420, 760 420 C 790 420, 810 440, 810 470 C 810 510, 760 550, 720 550" stroke="#00f0ff" />
+    <path d="M 670 430 C 710 400, 750 390, 790 390 C 830 390, 850 420, 850 460 C 850 510, 780 570, 730 570" stroke="#00ff87" />
+    <path d="M 670 400 C 720 370, 770 360, 810 360 C 860 360, 880 390, 880 440 C 880 500, 800 590, 740 590" stroke="#ffcc00" />
+    
+    <!-- Bottom Yellow Tip Loop (Representing Southern Borders) -->
+    <path d="M 600 560 C 600 620, 660 620, 660 560 C 660 530, 620 520, 610 540" stroke="#ffcc00" />
+    <!-- Bottom Outermost Green Loop -->
+    <path d="M 580 560 C 580 650, 680 650, 680 560" stroke="#00ff87" />
   </g>
 
-  <!-- ROW 4 -->
-  <g id="row4">
-    <!-- Left Module -->
-    <rect x="60" y="335" width="190" height="54" rx="8" fill="url(#moduleGrad)" filter="url(#subtleShadow)" />
-    <text x="76" y="355" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="700" fill="#38bdf8" letter-spacing="1">MODULE 4</text>
-    <text x="76" y="371" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#ffffff">QRA Engine</text>
+  <!-- Central Vertical Bus Conduit (The '│') -->
+  <line x1="340" y1="169" x2="340" y2="645" stroke="rgba(255, 255, 255, 0.08)" stroke-width="2" />
+  <line x1="340" y1="169" x2="340" y2="645" stroke="#00f0ff" stroke-width="1" stroke-opacity="0.3" stroke-dasharray="12 6" />
 
-    <!-- Connector -->
-    <path d="M 250 362 L 352 362" fill="none" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)" />
-    <!-- Intersection Node -->
-    <circle cx="330" cy="362" r="4" fill="#0d9488" stroke="#ffffff" stroke-width="1.5" />
+  <!-- ==================== FLOW ROWS ==================== -->
 
+  <!-- ROW 1: Ingestion -->
+  <g id="flow-row-1" transform="translate(0, 180)">
+    <!-- Left Module Card -->
+    <g transform="translate(60, 0)">
+      <rect x="0" y="0" width="200" height="56" rx="10" fill="url(#cardGrad)" stroke="rgba(0, 255, 135, 0.2)" stroke-width="1.5" />
+      <rect x="0" y="0" width="200" height="56" rx="10" fill="none" stroke="#00ff87" stroke-width="1" stroke-opacity="0.4" filter="url(#glow-green)" />
+      <text x="16" y="21" class="module-num" fill="#00ff87">MODULE 01</text>
+      <text x="16" y="39" class="module-text">Ingestion</text>
+    </g>
+    <!-- Connector Line -->
+    <path d="M 260 28 L 372 28" fill="none" stroke="#00ff87" stroke-width="1.5" stroke-opacity="0.8" marker-end="url(#arrow-cyan)" />
+    <!-- Glowing Crosshair Node (ASCII '┼') -->
+    <circle cx="340" cy="28" r="5" fill="#00ff87" stroke="#ffffff" stroke-width="1.5" filter="url(#glow-green)" />
     <!-- Right Process Card -->
-    <rect x="360" y="335" width="450" height="54" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#subtleShadow)" />
-    <rect x="360" y="335" width="4" height="54" rx="2" fill="#0d9488" />
-    <text x="378" y="367" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="500" fill="#1e293b">Stochastic Cross-Border Introduction Trees (10k Iterations)</text>
+    <g transform="translate(380, 0)">
+      <rect x="0" y="0" width="530" height="56" rx="10" fill="url(#cardGrad)" stroke="rgba(255, 255, 255, 0.04)" stroke-width="1.5" />
+      <path d="M 0 4 L 0 52 C 0 54, 1 56, 4 56 L 4 56 L 4 0 L 4 0 C 1 0, 0 2, 0 4 Z" fill="#00ff87" />
+      <text x="24" y="33" class="process-text">Environmental Data Processing &amp; Feature Engineering</text>
+    </g>
   </g>
 
-  <!-- ROW 5 -->
-  <g id="row5">
-    <!-- Left Module -->
-    <rect x="60" y="410" width="190" height="54" rx="8" fill="url(#moduleGrad)" filter="url(#subtleShadow)" />
-    <text x="76" y="430" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="700" fill="#38bdf8" letter-spacing="1">MODULE 5</text>
-    <text x="76" y="446" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#ffffff">Sampling</text>
-
-    <!-- Connector -->
-    <path d="M 250 437 L 352 437" fill="none" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)" />
-    <!-- Intersection Node -->
-    <circle cx="330" cy="437" r="4" fill="#6366f1" stroke="#ffffff" stroke-width="1.5" />
-
+  <!-- ROW 2: ML Engine -->
+  <g id="flow-row-2" transform="translate(0, 258)">
+    <!-- Left Module Card -->
+    <g transform="translate(60, 0)">
+      <rect x="0" y="0" width="200" height="56" rx="10" fill="url(#cardGrad)" stroke="rgba(217, 70, 239, 0.2)" stroke-width="1.5" />
+      <rect x="0" y="0" width="200" height="56" rx="10" fill="none" stroke="#d946ef" stroke-width="1" stroke-opacity="0.3" />
+      <text x="16" y="21" class="module-num" fill="#d946ef">MODULE 02</text>
+      <text x="16" y="39" class="module-text">ML Engine</text>
+    </g>
+    <!-- Connector Line -->
+    <path d="M 260 28 L 372 28" fill="none" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.5" marker-end="url(#arrow-cyan)" />
+    <!-- Glowing Crosshair Node -->
+    <circle cx="340" cy="28" r="4" fill="#d946ef" stroke="#ffffff" stroke-width="1.2" />
     <!-- Right Process Card -->
-    <rect x="360" y="410" width="450" height="54" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#subtleShadow)" />
-    <rect x="360" y="410" width="4" height="54" rx="2" fill="#6366f1" />
-    <text x="378" y="442" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="500" fill="#1e293b">Two-Stage Stratified Surveillance Allocation Plans</text>
+    <g transform="translate(380, 0)">
+      <rect x="0" y="0" width="530" height="56" rx="10" fill="url(#cardGrad)" stroke="rgba(255, 255, 255, 0.04)" stroke-width="1.5" />
+      <path d="M 0 4 L 0 52 C 0 54, 1 56, 4 56 L 4 56 L 4 0 L 4 0 C 1 0, 0 2, 0 4 Z" fill="#d946ef" />
+      <text x="24" y="33" class="process-text">Supervised Ensemble Outbreak Projections (Month T+2)</text>
+    </g>
   </g>
 
-  <!-- ROW 6 -->
-  <g id="row6">
-    <!-- Left Module -->
-    <rect x="60" y="485" width="190" height="54" rx="8" fill="url(#moduleGrad)" filter="url(#subtleShadow)" />
-    <text x="76" y="505" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="700" fill="#38bdf8" letter-spacing="1">MODULE 6</text>
-    <text x="76" y="521" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#ffffff">Portal</text>
-
-    <!-- Connector -->
-    <path d="M 250 512 L 352 512" fill="none" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)" />
-    <!-- Intersection Node -->
-    <circle cx="330" cy="512" r="4" fill="#0d9488" stroke="#ffffff" stroke-width="1.5" />
-
+  <!-- ROW 3: ODE Solver -->
+  <g id="flow-row-3" transform="translate(0, 336)">
+    <!-- Left Module Card -->
+    <g transform="translate(60, 0)">
+      <rect x="0" y="0" width="200" height="56" rx="10" fill="url(#cardGrad)" stroke="rgba(245, 158, 11, 0.2)" stroke-width="1.5" />
+      <rect x="0" y="0" width="200" height="56" rx="10" fill="none" stroke="#f59e0b" stroke-width="1" stroke-opacity="0.4" filter="url(#glow-orange)" />
+      <text x="16" y="21" class="module-num" fill="#f59e0b">MODULE 03</text>
+      <text x="16" y="39" class="module-text">ODE Solver</text>
+    </g>
+    <!-- Connector Line -->
+    <path d="M 260 28 L 372 28" fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-opacity="0.8" marker-end="url(#arrow-cyan)" />
+    <!-- Glowing Crosshair Node -->
+    <circle cx="340" cy="28" r="5" fill="#f59e0b" stroke="#ffffff" stroke-width="1.5" filter="url(#glow-orange)" />
     <!-- Right Process Card -->
-    <rect x="360" y="485" width="450" height="54" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#subtleShadow)" />
-    <rect x="360" y="485" width="4" height="54" rx="2" fill="#0d9488" />
-    <text x="378" y="517" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="500" fill="#1e293b">Interactive Web-Based Decision-Support Platform</text>
+    <g transform="translate(380, 0)">
+      <rect x="0" y="0" width="530" height="56" rx="10" fill="url(#cardGrad)" stroke="rgba(255, 255, 255, 0.04)" stroke-width="1.5" />
+      <path d="M 0 4 L 0 52 C 0 54, 1 56, 4 56 L 4 56 L 4 0 L 4 0 C 1 0, 0 2, 0 4 Z" fill="#f59e0b" />
+      <text x="24" y="33" class="process-text">Mechanistic Simulations, Stability &amp; Optimal Control</text>
+    </g>
   </g>
+
+  <!-- ROW 4: QRA Engine -->
+  <g id="flow-row-4" transform="translate(0, 414)">
+    <!-- Left Module Card -->
+    <g transform="translate(60, 0)">
+      <rect x="0" y="0" width="200" height="56" rx="10" fill="url(#cardGrad)" stroke="rgba(6, 182, 212, 0.2)" stroke-width="1.5" />
+      <rect x="0" y="0" width="200" height="56" rx="10" fill="none" stroke="#06b6d4" stroke-width="1" stroke-opacity="0.3" />
+      <text x="16" y="21" class="module-num" fill="#06b6d4">MODULE 04</text>
+      <text x="16" y="39" class="module-text">QRA Engine</text>
+    </g>
+    <!-- Connector Line -->
+    <path d="M 260 28 L 372 28" fill="none" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.5" marker-end="url(#arrow-cyan)" />
+    <!-- Glowing Crosshair Node -->
+    <circle cx="340" cy="28" r="4" fill="#06b6d4" stroke="#ffffff" stroke-width="1.2" />
+    <!-- Right Process Card -->
+    <g transform="translate(380, 0)">
+      <rect x="0" y="0" width="530" height="56" rx="10" fill="url(#cardGrad)" stroke="rgba(255, 255, 255, 0.04)" stroke-width="1.5" />
+      <path d="M 0 4 L 0 52 C 0 54, 1 56, 4 56 L 4 56 L 4 0 L 4 0 C 1 0, 0 2, 0 4 Z" fill="#06b6d4" />
+      <text x="24" y="33" class="process-text">Stochastic Cross-Border Introduction Trees (10k Iterations)</text>
+    </g>
+  </g>
+
+  <!-- ROW 5: Sampling -->
+  <g id="flow-row-5" transform="translate(0, 492)">
+    <!-- Left Module Card -->
+    <g transform="translate(60, 0)">
+      <rect x="0" y="0" width="200" height="56" rx="10" fill="url(#cardGrad)" stroke="rgba(244, 63, 94, 0.2)" stroke-width="1.5" />
+      <rect x="0" y="0" width="200" height="56" rx="10" fill="none" stroke="#f43f5e" stroke-width="1" stroke-opacity="0.4" filter="url(#glow-cyan)" />
+      <text x="16" y="21" class="module-num" fill="#f43f5e">MODULE 05</text>
+      <text x="16" y="39" class="module-text">Sampling</text>
+    </g>
+    <!-- Connector Line -->
+    <path d="M 260 28 L 372 28" fill="none" stroke="#f43f5e" stroke-width="1.5" stroke-opacity="0.8" marker-end="url(#arrow-cyan)" />
+    <!-- Glowing Crosshair Node -->
+    <circle cx="340" cy="28" r="5" fill="#f43f5e" stroke="#ffffff" stroke-width="1.5" filter="url(#glow-cyan)" />
+    <!-- Right Process Card -->
+    <g transform="translate(380, 0)">
+      <rect x="0" y="0" width="530" height="56" rx="10" fill="url(#cardGrad)" stroke="rgba(255, 255, 255, 0.04)" stroke-width="1.5" />
+      <path d="M 0 4 L 0 52 C 0 54, 1 56, 4 56 L 4 56 L 4 0 L 4 0 C 1 0, 0 2, 0 4 Z" fill="#f43f5e" />
+      <text x="24" y="33" class="process-text">Two-Stage Stratified Surveillance Allocation Plans</text>
+    </g>
+  </g>
+
+  <!-- ROW 6: Portal -->
+  <g id="flow-row-6" transform="translate(0, 570)">
+    <!-- Left Module Card -->
+    <g transform="translate(60, 0)">
+      <rect x="0" y="0" width="200" height="56" rx="10" fill="url(#cardGrad)" stroke="rgba(0, 240, 255, 0.2)" stroke-width="1.5" />
+      <rect x="0" y="0" width="200" height="56" rx="10" fill="none" stroke="#00f0ff" stroke-width="1" stroke-opacity="0.3" />
+      <text x="16" y="21" class="module-num" fill="#00f0ff">MODULE 06</text>
+      <text x="16" y="39" class="module-text">Portal</text>
+    </g>
+    <!-- Connector Line -->
+    <path d="M 260 28 L 372 28" fill="none" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.5" marker-end="url(#arrow-cyan)" />
+    <!-- Glowing Crosshair Node -->
+    <circle cx="340" cy="28" r="4" fill="#00f0ff" stroke="#ffffff" stroke-width="1.2" />
+    <!-- Right Process Card -->
+    <g transform="translate(380, 0)">
+      <rect x="0" y="0" width="530" height="56" rx="10" fill="url(#cardGrad)" stroke="rgba(255, 255, 255, 0.04)" stroke-width="1.5" />
+      <path d="M 0 4 L 0 52 C 0 54, 1 56, 4 56 L 4 56 L 4 0 L 4 0 C 1 0, 0 2, 0 4 Z" fill="#00f0ff" />
+      <text x="24" y="33" class="process-text">Interactive Web-Based Decision-Support Platform</text>
+    </g>
+  </g>
+
+  <!-- BOTTOM METADATA & DECORATIVE PILL -->
+  <g id="bottom-bar" transform="translate(60, 675)">
+    <!-- Pill Badge (ASCII "TRACK: AGENTS FOR GOOD" Style) -->
+    <rect x="0" y="0" width="260" height="30" rx="15" fill="none" stroke="#00ff87" stroke-width="1.5" filter="url(#glow-green)" />
+    <text x="130" y="19" class="pill-text" text-anchor="middle">TRACK: METHODOLOGY IN ACTION</text>
+
+    <!-- Technical Parameter Watermark (Overlay Style) -->
+    <g transform="translate(320, 18)" opacity="0.8">
+      <text x="0" y="0" class="tech-metadata"><tspan fill="rgba(255,255,255,0.4)">ENV_PARAMS:</tspan> LST_Day / Soil_Moist</text>
+      <text x="190" y="0" class="tech-metadata"><tspan fill="rgba(255,255,255,0.4)">STATUS:</tspan> SYSTEM_NOMINAL</text>
+      <circle cx="330" cy="-3" r="3" fill="#00ff87" filter="url(#glow-green)" />
+    </g>
+
+    <!-- Logo / Watermark -->
+    <text x="880" y="22" font-family="'Times New Roman', Times, serif" font-weight="900" font-size="28" fill="rgba(255,255,255,0.06)" font-style="italic" text-anchor="end">R₀</text>
+  </g>
+
 </svg>
