@@ -1,0 +1,283 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 750" width="100%" height="100%">
+  <defs>
+    <!-- Background Grid Pattern -->
+    <pattern id="cyberGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(56, 189, 248, 0.04)" stroke-width="1" />
+    </pattern>
+
+    <!-- Glowing Filters -->
+    <filter id="glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    
+    <filter id="glow-green" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="glow-orange" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Card Background Gradient -->
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1329" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#050914" stop-opacity="0.95" />
+    </linearGradient>
+
+    <!-- Arrow Marker -->
+    <marker id="arrow-cyan" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#00f0ff" />
+    </marker>
+    
+    <!-- Wave Gradients -->
+    <linearGradient id="waveGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0c102b" stop-opacity="0" />
+      <stop offset="50%" stop-color="#141a4a" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#0c102b" stop-opacity="0" />
+    </linearGradient>
+    
+    <linearGradient id="waveGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#060919" stop-opacity="0" />
+      <stop offset="30%" stop-color="#1d2766" stop-opacity="0.25" />
+      <stop offset="70%" stop-color="#152052" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#060919" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    .title-main { font-family: 'Montserrat', system-ui, -apple-system, sans-serif; font-weight: 900; font-size: 27px; fill: #ffffff; letter-spacing: 1px; }
+    .title-sub { font-family: 'Share Tech Mono', monospace, system-ui; font-weight: 700; font-size: 14px; fill: #00ff87; letter-spacing: 2px; }
+    .title-desc { font-family: 'Montserrat', system-ui, sans-serif; font-weight: 500; font-size: 13px; fill: #94a3b8; letter-spacing: 0.5px; }
+    .module-num { font-family: 'Share Tech Mono', monospace, system-ui; font-size: 9px; font-weight: 700; letter-spacing: 1.5px; }
+    .module-text { font-family: 'Montserrat', system-ui, sans-serif; font-weight: 700; font-size: 13px; fill: #ffffff; }
+    .process-text { font-family: 'Montserrat', system-ui, sans-serif; font-weight: 600; font-size: 12.5px; fill: #e2e8f0; }
+    .pill-text { font-family: 'Share Tech Mono', monospace, system-ui; font-size: 11px; font-weight: 700; fill: #00ff87; letter-spacing: 1.5px; }
+    .tech-metadata { font-family: 'Share Tech Mono', monospace, system-ui; font-size: 10px; fill: #475569; }
+  </style>
+
+  <!-- Deep Sci-Fi Dark Background -->
+  <rect width="1000" height="750" fill="#05070f" />
+  
+  <!-- Grid Layer -->
+  <rect width="1000" height="750" fill="url(#cyberGrid)" />
+
+  <!-- Atmospheric Glows (Radial Ambient Lights) -->
+  <circle cx="150" cy="450" r="280" fill="#00ff87" opacity="0.04" filter="url(#glow-green)" />
+  <circle cx="500" cy="350" r="350" fill="#f59e0b" opacity="0.03" filter="url(#glow-orange)" />
+  <circle cx="850" cy="200" r="250" fill="#d946ef" opacity="0.04" filter="url(#glow-cyan)" />
+  <circle cx="780" cy="550" r="250" fill="#00f0ff" opacity="0.03" filter="url(#glow-cyan)" />
+
+  <!-- Smooth Flowing Tech Waves in Background -->
+  <path d="M -100 580 C 200 480, 500 680, 1100 530 L 1100 760 L -100 760 Z" fill="url(#waveGrad1)" />
+  <path d="M -100 620 C 150 540, 650 710, 1100 600 L 1100 760 L -100 760 Z" fill="url(#waveGrad2)" />
+
+  <!-- Subtle Concentric Radar Target (Central Conduit Backing) -->
+  <circle cx="340" cy="415" r="110" stroke="rgba(245, 158, 11, 0.12)" stroke-dasharray="3 6" stroke-width="1.5" fill="none" />
+  <circle cx="340" cy="415" r="180" stroke="rgba(0, 240, 255, 0.05)" stroke-width="1" fill="none" />
+  <line x1="120" y1="415" x2="560" y2="415" stroke="rgba(255, 255, 255, 0.03)" stroke-dasharray="2 4" />
+  <line x1="340" y1="130" x2="340" y2="700" stroke="rgba(255, 255, 255, 0.03)" stroke-dasharray="2 4" />
+
+  <!-- Constellation Watermark (Livestock Pathogen Theme - Cyber Bull/Animal Silhouette) -->
+  <g opacity="0.25">
+    <!-- Lines -->
+    <line x1="780" y1="130" x2="815" y2="100" stroke="#00ff87" stroke-width="1" stroke-opacity="0.6" />
+    <line x1="815" y1="100" x2="855" y2="100" stroke="#00ff87" stroke-width="1" stroke-opacity="0.6" />
+    <line x1="855" y1="100" x2="890" y2="130" stroke="#00ff87" stroke-width="1" stroke-opacity="0.6" />
+    <line x1="815" y1="100" x2="835" y2="180" stroke="#00ff87" stroke-width="1" stroke-opacity="0.6" />
+    <line x1="855" y1="100" x2="835" y2="180" stroke="#00ff87" stroke-width="1" stroke-opacity="0.6" />
+    <line x1="780" y1="130" x2="835" y2="180" stroke="#00ff87" stroke-width="1" stroke-opacity="0.6" />
+    <line x1="890" y1="130" x2="835" y2="180" stroke="#00ff87" stroke-width="1" stroke-opacity="0.6" />
+    <line x1="835" y1="180" x2="820" y2="230" stroke="#00ff87" stroke-width="1" stroke-opacity="0.6" />
+    <line x1="835" y1="180" x2="850" y2="230" stroke="#00ff87" stroke-width="1" stroke-opacity="0.6" />
+    <!-- Nodes -->
+    <circle cx="780" cy="130" r="3" fill="#00ff87" filter="url(#glow-green)" />
+    <circle cx="815" cy="100" r="3.5" fill="#00ff87" filter="url(#glow-green)" />
+    <circle cx="855" cy="100" r="3.5" fill="#00ff87" filter="url(#glow-green)" />
+    <circle cx="890" cy="130" r="3" fill="#00ff87" filter="url(#glow-green)" />
+    <circle cx="835" cy="180" r="4.5" fill="#00ff87" filter="url(#glow-green)" />
+    <circle cx="820" cy="230" r="3" fill="#00ff87" />
+    <circle cx="850" cy="230" r="3" fill="#00ff87" />
+  </g>
+
+  <!-- HEADER SECTION -->
+  <g id="header-group" transform="translate(60, 45)">
+    <text x="0" y="25" class="title-main">ONE HEALTH DISEASE INTELLIGENCE</text>
+    <text x="0" y="52" class="title-sub">MULTI-AGENT SPATIOTEMPORAL FOREWARNING</text>
+    <text x="422" y="52" class="title-desc">&amp; EPIDEMIC MODELING FOR LIVESTOCK PATHOGENS</text>
+    <!-- Accent Line -->
+    <rect x="0" y="65" width="880" height="1" fill="rgba(255, 255, 255, 0.08)" />
+    <rect x="0" y="65" width="120" height="1.5" fill="#00ff87" />
+  </g>
+
+  <!-- METHODOLOGY FLOW CONTAINER -->
+  <rect x="310" y="145" width="630" height="520" rx="16" fill="url(#cardGrad)" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1.5" />
+  <rect x="310" y="145" width="630" height="520" rx="16" fill="none" stroke="rgba(0, 240, 255, 0.05)" stroke-width="1" />
+  
+  <!-- Container Header Inside -->
+  <g transform="translate(340, 145)">
+    <path d="M 0 0 L 160 0 L 180 24 L 0 24 Z" fill="rgba(0, 240, 255, 0.08)" />
+    <text x="12" y="16" font-family="Share Tech Mono", monospace, sans-serif font-size="10" font-weight="700" fill="#00f0ff" letter-spacing="1.5">METHODOLOGY INTEGRATION</text>
+  </g>
+
+  <!-- Central Vertical Bus Conduit (The '│') -->
+  <line x1="340" y1="169" x2="340" y2="645" stroke="rgba(255, 255, 255, 0.08)" stroke-width="2" />
+  <line x1="340" y1="169" x2="340" y2="645" stroke="#00f0ff" stroke-width="1" stroke-opacity="0.3" stroke-dasharray="12 6" />
+
+  <!-- ==================== FLOW ROWS ==================== -->
+
+  <!-- ROW 1: Ingestion -->
+  <g id="flow-row-1" transform="translate(0, 180)">
+    <!-- Left Module Card -->
+    <g transform="translate(60, 0)">
+      <rect x="0" y="0" width="200" height="56" rx="10" fill="url(#cardGrad)" stroke="rgba(0, 255, 135, 0.2)" stroke-width="1.5" />
+      <rect x="0" y="0" width="200" height="56" rx="10" fill="none" stroke="#00ff87" stroke-width="1" stroke-opacity="0.4" filter="url(#glow-green)" />
+      <text x="16" y="21" class="module-num" fill="#00ff87">MODULE 01</text>
+      <text x="16" y="39" class="module-text">Ingestion</text>
+    </g>
+    <!-- Connector Line -->
+    <path d="M 260 28 L 372 28" fill="none" stroke="#00ff87" stroke-width="1.5" stroke-opacity="0.8" marker-end="url(#arrow-cyan)" />
+    <!-- Glowing Crosshair Node (ASCII '┼') -->
+    <circle cx="340" cy="28" r="5" fill="#00ff87" stroke="#ffffff" stroke-width="1.5" filter="url(#glow-green)" />
+    <!-- Right Process Card -->
+    <g transform="translate(380, 0)">
+      <rect x="0" y="0" width="530" height="56" rx="10" fill="url(#cardGrad)" stroke="rgba(255, 255, 255, 0.04)" stroke-width="1.5" />
+      <path d="M 0 4 L 0 52 C 0 54, 1 56, 4 56 L 4 56 L 4 0 L 4 0 C 1 0, 0 2, 0 4 Z" fill="#00ff87" />
+      <text x="24" y="33" class="process-text">Environmental Data Processing &amp; Feature Engineering</text>
+    </g>
+  </g>
+
+  <!-- ROW 2: ML Engine -->
+  <g id="flow-row-2" transform="translate(0, 258)">
+    <!-- Left Module Card -->
+    <g transform="translate(60, 0)">
+      <rect x="0" y="0" width="200" height="56" rx="10" fill="url(#cardGrad)" stroke="rgba(217, 70, 239, 0.2)" stroke-width="1.5" />
+      <rect x="0" y="0" width="200" height="56" rx="10" fill="none" stroke="#d946ef" stroke-width="1" stroke-opacity="0.3" />
+      <text x="16" y="21" class="module-num" fill="#d946ef">MODULE 02</text>
+      <text x="16" y="39" class="module-text">ML Engine</text>
+    </g>
+    <!-- Connector Line -->
+    <path d="M 260 28 L 372 28" fill="none" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.5" marker-end="url(#arrow-cyan)" />
+    <!-- Glowing Crosshair Node -->
+    <circle cx="340" cy="28" r="4" fill="#d946ef" stroke="#ffffff" stroke-width="1.2" />
+    <!-- Right Process Card -->
+    <g transform="translate(380, 0)">
+      <rect x="0" y="0" width="530" height="56" rx="10" fill="url(#cardGrad)" stroke="rgba(255, 255, 255, 0.04)" stroke-width="1.5" />
+      <path d="M 0 4 L 0 52 C 0 54, 1 56, 4 56 L 4 56 L 4 0 L 4 0 C 1 0, 0 2, 0 4 Z" fill="#d946ef" />
+      <text x="24" y="33" class="process-text">Supervised Ensemble Outbreak Projections (Month T+2)</text>
+    </g>
+  </g>
+
+  <!-- ROW 3: ODE Solver -->
+  <g id="flow-row-3" transform="translate(0, 336)">
+    <!-- Left Module Card -->
+    <g transform="translate(60, 0)">
+      <rect x="0" y="0" width="200" height="56" rx="10" fill="url(#cardGrad)" stroke="rgba(245, 158, 11, 0.2)" stroke-width="1.5" />
+      <rect x="0" y="0" width="200" height="56" rx="10" fill="none" stroke="#f59e0b" stroke-width="1" stroke-opacity="0.4" filter="url(#glow-orange)" />
+      <text x="16" y="21" class="module-num" fill="#f59e0b">MODULE 03</text>
+      <text x="16" y="39" class="module-text">ODE Solver</text>
+    </g>
+    <!-- Connector Line -->
+    <path d="M 260 28 L 372 28" fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-opacity="0.8" marker-end="url(#arrow-cyan)" />
+    <!-- Glowing Crosshair Node -->
+    <circle cx="340" cy="28" r="5" fill="#f59e0b" stroke="#ffffff" stroke-width="1.5" filter="url(#glow-orange)" />
+    <!-- Right Process Card -->
+    <g transform="translate(380, 0)">
+      <rect x="0" y="0" width="530" height="56" rx="10" fill="url(#cardGrad)" stroke="rgba(255, 255, 255, 0.04)" stroke-width="1.5" />
+      <path d="M 0 4 L 0 52 C 0 54, 1 56, 4 56 L 4 56 L 4 0 L 4 0 C 1 0, 0 2, 0 4 Z" fill="#f59e0b" />
+      <text x="24" y="33" class="process-text">Mechanistic Simulations, Stability &amp; Optimal Control</text>
+    </g>
+  </g>
+
+  <!-- ROW 4: QRA Engine -->
+  <g id="flow-row-4" transform="translate(0, 414)">
+    <!-- Left Module Card -->
+    <g transform="translate(60, 0)">
+      <rect x="0" y="0" width="200" height="56" rx="10" fill="url(#cardGrad)" stroke="rgba(6, 182, 212, 0.2)" stroke-width="1.5" />
+      <rect x="0" y="0" width="200" height="56" rx="10" fill="none" stroke="#06b6d4" stroke-width="1" stroke-opacity="0.3" />
+      <text x="16" y="21" class="module-num" fill="#06b6d4">MODULE 04</text>
+      <text x="16" y="39" class="module-text">QRA Engine</text>
+    </g>
+    <!-- Connector Line -->
+    <path d="M 260 28 L 372 28" fill="none" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.5" marker-end="url(#arrow-cyan)" />
+    <!-- Glowing Crosshair Node -->
+    <circle cx="340" cy="28" r="4" fill="#06b6d4" stroke="#ffffff" stroke-width="1.2" />
+    <!-- Right Process Card -->
+    <g transform="translate(380, 0)">
+      <rect x="0" y="0" width="530" height="56" rx="10" fill="url(#cardGrad)" stroke="rgba(255, 255, 255, 0.04)" stroke-width="1.5" />
+      <path d="M 0 4 L 0 52 C 0 54, 1 56, 4 56 L 4 56 L 4 0 L 4 0 C 1 0, 0 2, 0 4 Z" fill="#06b6d4" />
+      <text x="24" y="33" class="process-text">Stochastic Cross-Border Introduction Trees (10k Its)</text>
+    </g>
+  </g>
+
+  <!-- ROW 5: Sampling -->
+  <g id="flow-row-5" transform="translate(0, 492)">
+    <!-- Left Module Card -->
+    <g transform="translate(60, 0)">
+      <rect x="0" y="0" width="200" height="56" rx="10" fill="url(#cardGrad)" stroke="rgba(244, 63, 94, 0.2)" stroke-width="1.5" />
+      <rect x="0" y="0" width="200" height="56" rx="10" fill="none" stroke="#f43f5e" stroke-width="1" stroke-opacity="0.4" filter="url(#glow-cyan)" />
+      <text x="16" y="21" class="module-num" fill="#f43f5e">MODULE 05</text>
+      <text x="16" y="39" class="module-text">Sampling</text>
+    </g>
+    <!-- Connector Line -->
+    <path d="M 260 28 L 372 28" fill="none" stroke="#f43f5e" stroke-width="1.5" stroke-opacity="0.8" marker-end="url(#arrow-cyan)" />
+    <!-- Glowing Crosshair Node -->
+    <circle cx="340" cy="28" r="5" fill="#f43f5e" stroke="#ffffff" stroke-width="1.5" filter="url(#glow-cyan)" />
+    <!-- Right Process Card -->
+    <g transform="translate(380, 0)">
+      <rect x="0" y="0" width="530" height="56" rx="10" fill="url(#cardGrad)" stroke="rgba(255, 255, 255, 0.04)" stroke-width="1.5" />
+      <path d="M 0 4 L 0 52 C 0 54, 1 56, 4 56 L 4 56 L 4 0 L 4 0 C 1 0, 0 2, 0 4 Z" fill="#f43f5e" />
+      <text x="24" y="33" class="process-text">Two-Stage Stratified Surveillance Allocation Plans</text>
+    </g>
+  </g>
+
+  <!-- ROW 6: Portal -->
+  <g id="flow-row-6" transform="translate(0, 570)">
+    <!-- Left Module Card -->
+    <g transform="translate(60, 0)">
+      <rect x="0" y="0" width="200" height="56" rx="10" fill="url(#cardGrad)" stroke="rgba(0, 240, 255, 0.2)" stroke-width="1.5" />
+      <rect x="0" y="0" width="200" height="56" rx="10" fill="none" stroke="#00f0ff" stroke-width="1" stroke-opacity="0.3" />
+      <text x="16" y="21" class="module-num" fill="#00f0ff">MODULE 06</text>
+      <text x="16" y="39" class="module-text">Portal</text>
+    </g>
+    <!-- Connector Line -->
+    <path d="M 260 28 L 372 28" fill="none" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.5" marker-end="url(#arrow-cyan)" />
+    <!-- Glowing Crosshair Node -->
+    <circle cx="340" cy="28" r="4" fill="#00f0ff" stroke="#ffffff" stroke-width="1.2" />
+    <!-- Right Process Card -->
+    <g transform="translate(380, 0)">
+      <rect x="0" y="0" width="530" height="56" rx="10" fill="url(#cardGrad)" stroke="rgba(255, 255, 255, 0.04)" stroke-width="1.5" />
+      <path d="M 0 4 L 0 52 C 0 54, 1 56, 4 56 L 4 56 L 4 0 L 4 0 C 1 0, 0 2, 0 4 Z" fill="#00f0ff" />
+      <text x="24" y="33" class="process-text">Interactive Web-Based Decision-Support Platform</text>
+    </g>
+  </g>
+
+  <!-- BOTTOM METADATA & DECORATIVE PILL -->
+  <g id="bottom-bar" transform="translate(60, 675)">
+    <!-- Pill Badge (ASCII "TRACK: AGENTS FOR GOOD" Style) -->
+    <rect x="0" y="0" width="260" height="30" rx="15" fill="none" stroke="#00ff87" stroke-width="1.5" filter="url(#glow-green)" />
+    <text x="130" y="19" class="pill-text" text-anchor="middle">TRACK: METHODOLOGY IN ACTION</text>
+
+    <!-- Technical Parameter Watermark (Overlay Style) -->
+    <g transform="translate(320, 18)" opacity="0.8">
+      <text x="0" y="0" class="tech-metadata"><tspan fill="rgba(255,255,255,0.4)">ENV_PARAMS:</tspan> LST_Day / Soil_Moist</text>
+      <text x="190" y="0" class="tech-metadata"><tspan fill="rgba(255,255,255,0.4)">STATUS:</tspan> SYSTEM_NOMINAL</text>
+      <circle cx="330" cy="-3" r="3" fill="#00ff87" filter="url(#glow-green)" />
+    </g>
+
+    <!-- Logo / Watermark -->
+    <text x="880" y="22" font-family="'Times New Roman', Times, serif" font-weight="900" font-size="28" fill="rgba(255,255,255,0.06)" font-style="italic" text-anchor="end">R₀</text>
+  </g>
+
+</svg>
