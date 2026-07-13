@@ -105,7 +105,7 @@
     <!-- Right Process Card -->
     <rect x="360" y="335" width="450" height="54" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#subtleShadow)" />
     <rect x="360" y="335" width="4" height="54" rx="2" fill="#0d9488" />
-    <text x="378" y="367" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="500" fill="#1e293b">Stochastic Cross-Border Introduction Trees (10k Its)</text>
+    <text x="378" y="367" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="500" fill="#1e293b">Stochastic Cross-Border Introduction Trees (10k Iterations)</text>
   </g>
 
   <!-- ROW 5 -->
