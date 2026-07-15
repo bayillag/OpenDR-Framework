@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 650">
+  <!-- Background -->
+  <rect width="800" height="650" fill="#ffffff" />
+  
+  <!-- Definitions for Arrows -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+  </defs>
+
+  <!-- Title and Goal -->
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#2c3e50">Scenario Tree: Entry Assessment (UAE)</text>
+  <text x="400" y="55" font-family="Arial, sans-serif" font-size="14" font-style="italic" text-anchor="middle" fill="#7f8c8d">Goal: Determine the likelihood that an infected animal departs the source country.</text>
+
+  <!-- Node 0: Start -->
+  <rect x="150" y="80" width="220" height="40" rx="5" fill="#ebf5fb" stroke="#2980b9" stroke-width="2" />
+  <text x="260" y="105" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle">Livestock Selected for Export</text>
+
+  <!-- Connector Node 0 to P1 -->
+  <line x1="260" y1="120" x2="260" y2="150" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+
+  <!-- Node 1: P1 -->
+  <rect x="150" y="160" width="220" height="60" rx="2" fill="#fff" stroke="#333" stroke-width="2" />
+  <text x="260" y="185" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">P1: Outbreak</text>
+  <text x="260" y="205" font-family="Arial, sans-serif" font-size="13" text-anchor="middle">Active in UAE?</text>
+
+  <!-- P1 Branches -->
+  <line x1="370" y1="190" x2="540" y2="190" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+  <text x="420" y="180" font-family="Arial, sans-serif" font-size="12" fill="#c0392b">No</text>
+  <rect x="550" y="170" width="120" height="40" rx="5" fill="#f2f3f4" stroke="#7f8c8d" stroke-width="1" />
+  <text x="610" y="195" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#7f8c8d">[NO RISK]</text>
+
+  <line x1="260" y1="220" x2="260" y2="270" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+  <text x="270" y="245" font-family="Arial, sans-serif" font-size="12" fill="#27ae60">Yes (30.48%)</text>
+
+  <!-- Node 2: P2 -->
+  <rect x="150" y="280" width="220" height="60" rx="2" fill="#fff" stroke="#333" stroke-width="2" />
+  <text x="260" y="305" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">P2: Animal Infected</text>
+  <text x="260" y="325" font-family="Arial, sans-serif" font-size="13" text-anchor="middle">Subclinical/Incubating?</text>
+
+  <!-- P2 Branches -->
+  <line x1="370" y1="310" x2="540" y2="310" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+  <text x="420" y="300" font-family="Arial, sans-serif" font-size="12" fill="#c0392b">No</text>
+  <rect x="550" y="290" width="120" height="40" rx="5" fill="#f2f3f4" stroke="#7f8c8d" stroke-width="1" />
+  <text x="610" y="315" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#7f8c8d">[NO RISK]</text>
+
+  <line x1="260" y1="340" x2="260" y2="390" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+  <text x="270" y="365" font-family="Arial, sans-serif" font-size="12" fill="#27ae60">Yes (1.19%)</text>
+
+  <!-- Node 3: P3 -->
+  <rect x="150" y="400" width="220" height="60" rx="2" fill="#fff" stroke="#333" stroke-width="2" />
+  <text x="260" y="425" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">P3: Source Failure</text>
+  <text x="260" y="445" font-family="Arial, sans-serif" font-size="13" text-anchor="middle">UAE Vet Exam Misses?</text>
+
+  <!-- P3 Branches -->
+  <line x1="370" y1="430" x2="540" y2="430" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+  <text x="420" y="420" font-family="Arial, sans-serif" font-size="12" fill="#c0392b">No</text>
+  <rect x="550" y="410" width="180" height="40" rx="5" fill="#fdebd0" stroke="#d35400" stroke-width="1" />
+  <text x="640" y="435" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#d35400">[RISK STOPPED IN UAE]</text>
+
+  <line x1="260" y1="460" x2="260" y2="510" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+  <text x="270" y="485" font-family="Arial, sans-serif" font-size="12" fill="#27ae60">Yes (3.00%)</text>
+
+  <!-- Final Outcome -->
+  <rect x="100" y="520" width="320" height="50" rx="10" fill="#fadbd8" stroke="#c0392b" stroke-width="3" />
+  <text x="260" y="550" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#c0392b">INFECTED ANIMAL DEPARTS UAE</text>
+</svg>
