@@ -1,0 +1,232 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 300" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050B17"/>
+      <stop offset="50%" stop-color="#081326"/>
+      <stop offset="100%" stop-color="#040812"/>
+    </linearGradient>
+
+    <!-- Radial Background Glow Behind Emblem -->
+    <radialGradient id="glowGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00F0FF" stop-opacity="0.25"/>
+      <stop offset="50%" stop-color="#0284C7" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Core Brand Gradients -->
+    <linearGradient id="cyanTealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F0FF"/>
+      <stop offset="50%" stop-color="#00D2B4"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+
+    <linearGradient id="electricBlueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#6366F1"/>
+    </linearGradient>
+
+    <linearGradient id="orbitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F0FF"/>
+      <stop offset="50%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+
+    <linearGradient id="globeSphereGrad" x1="20%" y1="15%" x2="80%" y2="85%">
+      <stop offset="0%" stop-color="#0F2444"/>
+      <stop offset="60%" stop-color="#081426"/>
+      <stop offset="100%" stop-color="#040913"/>
+    </linearGradient>
+
+    <linearGradient id="textMainGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="60%" stop-color="#F0FDF4"/>
+      <stop offset="100%" stop-color="#E2E8F0"/>
+    </linearGradient>
+
+    <linearGradient id="goldBeaconGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+
+    <linearGradient id="dividerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F0FF" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#10B981" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Glow Filter for Neural Nodes and Lasers -->
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="100%" height="100%" rx="16" fill="url(#bgGrad)" stroke="#1E293B" stroke-width="1.5"/>
+
+  <!-- Subtle High-Tech Blueprint Matrix Grid -->
+  <g opacity="0.05" stroke="#38BDF8" stroke-width="1">
+    <line x1="0" y1="50" x2="940" y2="50"/>
+    <line x1="0" y1="100" x2="940" y2="100"/>
+    <line x1="0" y1="150" x2="940" y2="150"/>
+    <line x1="0" y1="200" x2="940" y2="200"/>
+    <line x1="0" y1="250" x2="940" y2="250"/>
+    <line x1="155" y1="0" x2="155" y2="300"/>
+    <line x1="300" y1="0" x2="300" y2="300"/>
+    <line x1="500" y1="0" x2="500" y2="300"/>
+    <line x1="700" y1="0" x2="700" y2="300"/>
+  </g>
+
+  <!-- ============================================================== -->
+  <!-- LEFT: THE GEOSPATIAL EMBLEM (Center: 155, 150)                 -->
+  <!-- ============================================================== -->
+
+  <!-- Radial Aura Glow -->
+  <circle cx="155" cy="150" r="130" fill="url(#glowGlow)"/>
+
+  <!-- Outer Astro-Navigational Compass Dial -->
+  <g transform="translate(155, 150)">
+    <circle r="102" fill="none" stroke="#1E3A5F" stroke-width="1" stroke-dasharray="2, 6"/>
+    <circle r="96" fill="none" stroke="#00F0FF" stroke-width="1.2" stroke-opacity="0.35"/>
+
+    <!-- Compass Cardinal Ticks -->
+    <line x1="0" y1="-96" x2="0" y2="-102" stroke="#00F0FF" stroke-width="2"/>
+    <line x1="0" y1="96" x2="0" y2="102" stroke="#00F0FF" stroke-width="2"/>
+    <line x1="-96" y1="0" x2="-102" y2="0" stroke="#00F0FF" stroke-width="2"/>
+    <line x1="96" y1="0" x2="102" y2="0" stroke="#00F0FF" stroke-width="2"/>
+    
+    <!-- Secondary Ordinal Ticks -->
+    <line x1="68" y1="68" x2="72" y2="72" stroke="#10B981" stroke-width="1.5" stroke-opacity="0.7"/>
+    <line x1="-68" y1="68" x2="-72" y2="72" stroke="#10B981" stroke-width="1.5" stroke-opacity="0.7"/>
+    <line x1="68" y1="-68" x2="72" y2="-68" stroke="#10B981" stroke-width="1.5" stroke-opacity="0.7"/>
+    <line x1="-68" y1="-68" x2="-72" y2="-68" stroke="#10B981" stroke-width="1.5" stroke-opacity="0.7"/>
+  </g>
+
+  <!-- Planetary Base Sphere -->
+  <circle cx="155" cy="150" r="78" fill="url(#globeSphereGrad)" stroke="url(#cyanTealGrad)" stroke-width="2" filter="url(#neonGlow)"/>
+
+  <!-- Hexagonal Discrete Global Grid (DGGS) Facets -->
+  <g stroke="#00F0FF" stroke-opacity="0.18" stroke-width="1" fill="none">
+    <!-- Top-Mid Hexagon -->
+    <polygon points="155,88 170,96 170,113 155,121 140,113 140,96"/>
+    <!-- Center Hexagon -->
+    <polygon points="155,125 174,136 174,158 155,169 136,158 136,136" fill="#00F0FF" fill-opacity="0.04"/>
+    <!-- Left Hexagon -->
+    <polygon points="115,122 131,131 131,149 115,158 99,149 99,131"/>
+    <!-- Right Hexagon -->
+    <polygon points="195,122 211,131 211,149 195,158 179,149 179,131"/>
+    <!-- Bottom Hexagon -->
+    <polygon points="155,173 170,181 170,198 155,206 140,198 140,181"/>
+  </g>
+
+  <!-- Curvilinear Geodesic Parallels & Meridians -->
+  <g stroke="#38BDF8" stroke-opacity="0.35" stroke-width="1.2" fill="none">
+    <!-- Latitude Lines -->
+    <ellipse cx="155" cy="150" rx="78" ry="24"/>
+    <ellipse cx="155" cy="120" rx="68" ry="16"/>
+    <ellipse cx="155" cy="180" rx="68" ry="16"/>
+
+    <!-- Meridian Arcs -->
+    <path d="M 155 72 C 122 96, 108 128, 108 150 C 108 172, 122 204, 155 228"/>
+    <path d="M 155 72 C 188 96, 202 128, 202 150 C 202 172, 188 204, 155 228"/>
+    <line x1="155" y1="72" x2="155" y2="228" stroke-opacity="0.45"/>
+  </g>
+
+  <!-- Dynamic Elevation & Topological Contour Strata (GIS Elevation Layers) -->
+  <g fill="none" stroke-width="2" stroke-linecap="round">
+    <path d="M 90 162 Q 120 148, 150 166 T 218 156" stroke="url(#cyanTealGrad)" stroke-opacity="0.85"/>
+    <path d="M 98 180 Q 132 166, 160 182 T 212 176" stroke="#10B981" stroke-opacity="0.7"/>
+    <path d="M 112 198 Q 140 186, 172 200 T 198 196" stroke="#059669" stroke-opacity="0.6"/>
+  </g>
+
+  <!-- AI Constellation Mesh / Neural Network Vertices -->
+  <g stroke="#00F0FF" stroke-opacity="0.5" stroke-width="1.2">
+    <line x1="130" y1="110" x2="174" y2="136"/>
+    <line x1="174" y1="136" x2="145" y2="162"/>
+    <line x1="145" y1="162" x2="188" y2="178"/>
+    <line x1="130" y1="110" x2="115" y2="145"/>
+    <line x1="115" y1="145" x2="145" y2="162"/>
+    <line x1="188" y1="178" x2="155" y2="206"/>
+  </g>
+
+  <!-- Network Nodes (Glowing GeoAI Data Points) -->
+  <circle cx="130" cy="110" r="3" fill="#00F0FF" filter="url(#neonGlow)"/>
+  <circle cx="174" cy="136" r="3.5" fill="#10B981" filter="url(#neonGlow)"/>
+  <circle cx="115" cy="145" r="2.5" fill="#38BDF8"/>
+  <circle cx="145" cy="162" r="4" fill="#00F0FF" filter="url(#neonGlow)"/>
+  <circle cx="188" cy="178" r="3" fill="#10B981"/>
+  <circle cx="155" cy="206" r="2.5" fill="#38BDF8"/>
+
+  <!-- Tilted Orbital Satellite Ring (Planetary Remote Sensing) -->
+  <ellipse cx="155" cy="150" rx="114" ry="40" transform="rotate(-30, 155, 150)" fill="none" stroke="url(#orbitGrad)" stroke-width="2" stroke-dasharray="140 10 35 10 70 12" filter="url(#neonGlow)"/>
+
+  <!-- Orbital Sensor Satellite Node -->
+  <g transform="rotate(-30, 155, 150)">
+    <circle cx="269" cy="150" r="4.5" fill="#FFFFFF" filter="url(#neonGlow)"/>
+    <circle cx="269" cy="150" r="2" fill="#00F0FF"/>
+  </g>
+
+  <!-- North Pole Apex Beacon (Knowledge Star) -->
+  <path d="M 155 62 L 157.5 70 L 165.5 72.5 L 157.5 75 L 155 83 L 152.5 75 L 144.5 72.5 L 152.5 70 Z" fill="url(#goldBeaconGrad)" filter="url(#neonGlow)"/>
+
+  <!-- ============================================================== -->
+  <!-- RIGHT: ACADEMY TYPOGRAPHY & IDENTITY                           -->
+  <!-- ============================================================== -->
+
+  <!-- Top Pill Badge: Identity & Foundation -->
+  <g transform="translate(305, 50)">
+    <rect x="0" y="0" width="220" height="24" rx="12" fill="#0369A1" fill-opacity="0.2" stroke="#0284C7" stroke-opacity="0.45" stroke-width="1"/>
+    <circle cx="12" cy="12" r="3.5" fill="#00F0FF" filter="url(#neonGlow)"/>
+    <text x="24" y="15.5" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="700" fill="#38BDF8" letter-spacing="1.5">OPEN-SOURCE GEOMATICS</text>
+  </g>
+
+  <!-- Header Category Line -->
+  <text x="305" y="104" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#00F0FF" letter-spacing="4.5">NEXT GENERATION</text>
+
+  <!-- Main Title: OPEN GEOSPATIAL -->
+  <text x="305" y="146" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="37" font-weight="900" fill="url(#textMainGrad)" letter-spacing="0.5">OPEN GEOSPATIAL</text>
+
+  <!-- Sub-Title: SOLUTIONS ACADEMY -->
+  <text x="305" y="184" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="800" fill="url(#cyanTealGrad)" letter-spacing="1.2">SOLUTIONS ACADEMY</text>
+
+  <!-- High-Tech Divider Line with Leading Light Node -->
+  <line x1="305" y1="204" x2="900" y2="204" stroke="url(#dividerGrad)" stroke-width="1.8"/>
+  <circle cx="305" cy="204" r="2.5" fill="#00F0FF" filter="url(#neonGlow)"/>
+
+  <!-- Core Academic Pillars / Tech Badges -->
+  <g transform="translate(305, 222)">
+    
+    <!-- Badge 1: GeoAI & Earth Engine -->
+    <g transform="translate(0, 0)">
+      <rect width="138" height="28" rx="6" fill="#0F172A" stroke="#334155" stroke-width="1"/>
+      <circle cx="12" cy="14" r="3" fill="#00F0FF"/>
+      <text x="22" y="18" font-family="'Inter', -apple-system, sans-serif" font-size="11" font-weight="600" fill="#E2E8F0">GeoAI &amp; opengeos</text>
+    </g>
+
+    <!-- Badge 2: PostGIS & Enterprise DB -->
+    <g transform="translate(148, 0)">
+      <rect width="144" height="28" rx="6" fill="#0F172A" stroke="#334155" stroke-width="1"/>
+      <circle cx="12" cy="14" r="3" fill="#3B82F6"/>
+      <text x="22" y="18" font-family="'Inter', -apple-system, sans-serif" font-size="11" font-weight="600" fill="#E2E8F0">PostGIS &amp; Timescale</text>
+    </g>
+
+    <!-- Badge 3: R Spatial Statistics -->
+    <g transform="translate(302, 0)">
+      <rect width="132" height="28" rx="6" fill="#0F172A" stroke="#334155" stroke-width="1"/>
+      <circle cx="12" cy="14" r="3" fill="#10B981"/>
+      <text x="22" y="18" font-family="'Inter', -apple-system, sans-serif" font-size="11" font-weight="600" fill="#E2E8F0">R Spatial / CTV</text>
+    </g>
+
+    <!-- Badge 4: Climate Intelligence -->
+    <g transform="translate(444, 0)">
+      <rect width="145" height="28" rx="6" fill="#0F172A" stroke="#334155" stroke-width="1"/>
+      <circle cx="12" cy="14" r="3" fill="#F59E0B"/>
+      <text x="22" y="18" font-family="'Inter', -apple-system, sans-serif" font-size="11" font-weight="600" fill="#E2E8F0">Climate Intelligence</text>
+    </g>
+
+  </g>
+</svg>
