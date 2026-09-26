@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" width="150" height="150">
+  <defs>
+    <!-- Globe Gradient -->
+    <linearGradient id="wmGlobeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F0FF"/>
+      <stop offset="60%" stop-color="#00E5A3"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+
+    <!-- Orbit Gradient -->
+    <linearGradient id="wmOrbitGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="40%" stop-color="#00F0FF"/>
+      <stop offset="90%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#00E5A3"/>
+    </linearGradient>
+
+    <!-- Golden Star Gradient -->
+    <linearGradient id="wmStarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF066"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+
+    <!-- High-Contrast Neon Glow Filter -->
+    <filter id="wmGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Semi-Transparent Dark Protective Disc (Ensures visibility on white/light videos) -->
+  <circle cx="75" cy="75" r="71" fill="#030814" fill-opacity="0.88" stroke="#00F0FF" stroke-opacity="0.35" stroke-width="1.2"/>
+
+  <!-- Subtle Crosshairs -->
+  <line x1="75" y1="10" x2="75" y2="140" stroke="#0C2548" stroke-width="1"/>
+  <line x1="10" y1="75" x2="140" y2="75" stroke="#0C2548" stroke-width="1"/>
+
+  <!-- Outer Coordinate Dial Ring -->
+  <circle cx="75" cy="75" r="62" fill="none" stroke="#133156" stroke-width="1" stroke-dasharray="2, 5"/>
+  <circle cx="75" cy="75" r="57" fill="none" stroke="#00E5FF" stroke-width="1" stroke-opacity="0.3"/>
+
+  <!-- Cardinal Coordinate Ticks -->
+  <line x1="75" y1="13" x2="75" y2="18" stroke="#00F0FF" stroke-width="2.5"/>
+  <line x1="75" y1="132" x2="75" y2="137" stroke="#00F0FF" stroke-width="2.5"/>
+  <line x1="13" y1="75" x2="18" y2="75" stroke="#00F0FF" stroke-width="2.5"/>
+  <line x1="132" y1="75" x2="137" y2="75" stroke="#00F0FF" stroke-width="2.5"/>
+
+  <!-- Main Globe Ring -->
+  <circle cx="75" cy="75" r="46" fill="#040D1B" stroke="url(#wmGlobeGrad)" stroke-width="3" filter="url(#wmGlow)"/>
+
+  <!-- DGGS Central Hexagon -->
+  <polygon points="75,61 86,67 86,81 75,87 64,81 64,67" fill="#00E5FF" fill-opacity="0.06" stroke="#00E5FF" stroke-opacity="0.3" stroke-width="1.2"/>
+
+  <!-- Curvilinear Latitude Parallels -->
+  <g stroke="#1E548A" stroke-opacity="0.6" stroke-width="1.2" fill="none">
+    <ellipse cx="75" cy="75" rx="46" ry="14"/>
+    <ellipse cx="75" cy="59" rx="41" ry="10"/>
+    <ellipse cx="75" cy="91" rx="41" ry="10"/>
+  </g>
+
+  <!-- Meridian Line -->
+  <line x1="75" y1="29" x2="75" y2="121" stroke="#1E548A" stroke-opacity="0.5" stroke-width="1.2"/>
+
+  <!-- Topographic Contour Strata (GIS Elevation Layers) -->
+  <g fill="none" stroke-linecap="round">
+    <path d="M 37 84 Q 56 76, 75 86 T 113 80" stroke="#00F0FF" stroke-width="2.8" filter="url(#wmGlow)"/>
+    <path d="M 41 94 Q 60 85, 78 95 T 109 91" stroke="#00E5A3" stroke-width="2.4"/>
+    <path d="M 48 104 Q 65 98, 83 105 T 102 103" stroke="#059669" stroke-width="1.8"/>
+  </g>
+
+  <!-- Constellation Nodes & Edges -->
+  <g stroke="#00F0FF" stroke-opacity="0.75" stroke-width="1.4">
+    <line x1="59" y1="56" x2="86" y2="72"/>
+    <line x1="50" y1="74" x2="59" y2="56"/>
+    <line x1="50" y1="74" x2="68" y2="86"/>
+    <line x1="68" y1="86" x2="95" y2="97"/>
+  </g>
+
+  <!-- Glowing Graph Vertices -->
+  <circle cx="59" cy="56" r="3" fill="#00F0FF" filter="url(#wmGlow)"/>
+  <circle cx="86" cy="72" r="3.2" fill="#00E5A3" filter="url(#wmGlow)"/>
+  <circle cx="50" cy="74" r="2.4" fill="#38BDF8"/>
+  <circle cx="68" cy="86" r="3.5" fill="#00F0FF" filter="url(#wmGlow)"/>
+  <circle cx="95" cy="97" r="2.6" fill="#00E5A3"/>
+
+  <!-- Tilted Orbit Path -->
+  <ellipse cx="75" cy="75" rx="66" ry="24" transform="rotate(-32, 75, 75)" fill="none" stroke="url(#wmOrbitGrad)" stroke-width="2.6" stroke-dasharray="80 10 24 10 36 10" filter="url(#wmGlow)"/>
+
+  <!-- Satellite Node with Square Halo -->
+  <g transform="rotate(-32, 75, 75)">
+    <rect x="135" y="70" width="10" height="10" transform="rotate(45, 140, 75)" fill="#00F0FF" fill-opacity="0.3" stroke="#FFFFFF" stroke-opacity="0.7" stroke-width="0.8"/>
+    <circle cx="140" cy="75" r="3.6" fill="#FFFFFF" filter="url(#wmGlow)"/>
+    <circle cx="140" cy="75" r="1.6" fill="#00F0FF"/>
+  </g>
+
+  <!-- Golden Apex Star (North Pole Beacon) -->
+  <g transform="translate(75, 29)">
+    <path d="M 0 -9 L 2 -2.5 L 8.5 0 L 2 2.5 L 0 9 L -2 2.5 L -8.5 0 L -2 -2.5 Z" fill="url(#wmStarGrad)" filter="url(#wmGlow)"/>
+    <circle cx="0" cy="0" r="1.4" fill="#FFFFFF"/>
+  </g>
+</svg>
